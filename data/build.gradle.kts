@@ -27,6 +27,6 @@ android {
 dependencies {
     implementation(project(":domain"))
 
-    implementation(Hilt.ANDROID)
-    kapt(Hilt.COMPILER)
+    implementation(Libs.Hilt.ANDROID)
+    kapt(Libs.Hilt.COMPILER)
 }

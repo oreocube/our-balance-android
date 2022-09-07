@@ -40,14 +40,14 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
 
-    implementation(AndroidX.CORE)
-    implementation(AndroidX.APPCOMPAT)
-    implementation(AndroidX.MATERIAL)
-    implementation(AndroidX.CONSTRAINT_LAYOUT)
-    testImplementation(Test.JUNIT)
-    androidTestImplementation(AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(AndroidTest.ESPRESSO_CORE)
+    implementation(Libs.AndroidX.CORE)
+    implementation(Libs.AndroidX.APPCOMPAT)
+    implementation(Libs.AndroidX.MATERIAL)
+    implementation(Libs.AndroidX.CONSTRAINT_LAYOUT)
+    testImplementation(Libs.Test.JUNIT)
+    androidTestImplementation(Libs.AndroidTest.ANDROID_JUNIT)
+    androidTestImplementation(Libs.AndroidTest.ESPRESSO_CORE)
 
-    implementation(Hilt.ANDROID)
-    kapt(Hilt.COMPILER)
+    implementation(Libs.Hilt.ANDROID)
+    kapt(Libs.Hilt.COMPILER)
 }

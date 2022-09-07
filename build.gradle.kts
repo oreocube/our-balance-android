@@ -6,7 +6,7 @@ plugins {
 }
 buildscript {
     dependencies {
-        classpath(Hilt.ANDROID_GRADLE_PLUGIN)
+        classpath(Libs.Hilt.ANDROID_GRADLE_PLUGIN)
     }
 }
 

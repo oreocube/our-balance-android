@@ -13,4 +13,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "OurBalance"
-include(":app", ":data", ":domain")
+include(":app")
+include(":data", ":domain", ":feature")

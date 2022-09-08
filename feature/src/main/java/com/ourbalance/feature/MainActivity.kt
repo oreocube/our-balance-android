@@ -1,4 +1,4 @@
-package com.ourbalance
+package com.ourbalance.feature
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

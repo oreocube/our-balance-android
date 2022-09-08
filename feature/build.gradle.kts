@@ -1,14 +1,12 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
+    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
 dependencies {
-    implementation(project(":data"))
     implementation(project(":domain"))
-    implementation(project(":feature"))
 
     implementation(Libs.AndroidX.CORE)
     implementation(Libs.AndroidX.APPCOMPAT)

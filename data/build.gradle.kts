@@ -10,4 +10,9 @@ dependencies {
 
     implementation(Libs.Hilt.ANDROID)
     kapt(Libs.Hilt.COMPILER)
+    implementation(Libs.Network.RETROFIT)
+    implementation(Libs.Network.CONVERTER_GSON)
+    implementation(Libs.Network.OKHTTP)
+    implementation(Libs.Network.LOGGING_INTERCEPTOR)
+    implementation(Libs.Timber.TIMBER)
 }

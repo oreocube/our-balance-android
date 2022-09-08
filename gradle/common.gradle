@@ -5,12 +5,15 @@ if (hasLibraryPlugin || hasApplicationPlugin) {
     android {
         compileSdk = Config.COMPILE_SDK
         defaultConfig {
-            applicationId = Config.APPLICATION_ID
             targetSdk = Config.TARGET_SDK
             minSdk = Config.MIN_SDK
             versionCode = Config.VERSION_CODE
             versionName = Config.VERSION_NAME
             testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
+
+            if (hasApplicationPlugin) {
+                applicationId = Config.APPLICATION_ID
+            }
         }
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_1_8

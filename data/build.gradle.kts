@@ -5,28 +5,14 @@ plugins {
     id("dagger.hilt.android.plugin")
 }
 
-android {
-    compileSdk = Config.COMPILE_SDK
-    defaultConfig {
-        minSdk = Config.MIN_SDK
-        targetSdk = Config.TARGET_SDK
-        testInstrumentationRunner = Config.TEST_INSTRUMENTATION_RUNNER
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-}
-
 dependencies {
     implementation(project(":domain"))
 
     implementation(Libs.Hilt.ANDROID)
     kapt(Libs.Hilt.COMPILER)
+    implementation(Libs.Network.RETROFIT)
+    implementation(Libs.Network.CONVERTER_GSON)
+    implementation(Libs.Network.OKHTTP)
+    implementation(Libs.Network.LOGGING_INTERCEPTOR)
+    implementation(Libs.Timber.TIMBER)
 }

@@ -1,14 +1,12 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
+    id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
 dependencies {
-    implementation(project(":data"))
     implementation(project(":domain"))
-    implementation(project(":feature"))
 
     implementation(Libs.AndroidX.CORE)
     implementation(Libs.AndroidX.APPCOMPAT)
@@ -20,6 +18,8 @@ dependencies {
 
     implementation(Libs.Hilt.ANDROID)
     kapt(Libs.Hilt.COMPILER)
+    implementation(Libs.AndroidX.ACTIVITY_KTX)
+    implementation(Libs.AndroidX.FRAGMENT_KTX)
     implementation(Libs.Network.RETROFIT)
     implementation(Libs.Network.CONVERTER_GSON)
     implementation(Libs.Network.OKHTTP)

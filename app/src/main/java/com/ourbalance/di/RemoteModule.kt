@@ -14,7 +14,6 @@ import retrofit2.create
 import javax.inject.Qualifier
 import javax.inject.Singleton
 
-
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class AuthOkHttpClient

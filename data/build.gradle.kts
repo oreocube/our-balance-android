@@ -15,4 +15,7 @@ dependencies {
     implementation(Libs.Network.OKHTTP)
     implementation(Libs.Network.LOGGING_INTERCEPTOR)
     implementation(Libs.Timber.TIMBER)
+    implementation(Libs.Coroutines.CORE)
+    implementation(Libs.DataStore.DATASTORE)
+    testImplementation(Libs.Test.MOCK_WEB_SERVER)
 }

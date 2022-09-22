@@ -25,4 +25,5 @@ dependencies {
     implementation(Libs.Network.OKHTTP)
     implementation(Libs.Network.LOGGING_INTERCEPTOR)
     implementation(Libs.Timber.TIMBER)
+    implementation(Libs.Coroutines.CORE)
 }

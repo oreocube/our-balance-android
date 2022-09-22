@@ -11,4 +11,6 @@ object Version {
     const val RETROFIT = "2.9.0"
     const val OKHTTP = "4.10.0"
     const val TIMBER = "5.0.1"
+    const val COROUTINES = "1.6.4"
+    const val DATASTORE = "1.0.0"
 }

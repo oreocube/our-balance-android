@@ -12,4 +12,5 @@ java {
 dependencies {
     implementation(Libs.Hilt.CORE)
     kapt(Libs.Hilt.COMPILER)
+    implementation (Libs.Coroutines.CORE)
 }

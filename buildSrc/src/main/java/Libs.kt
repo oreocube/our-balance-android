@@ -19,6 +19,7 @@ object Libs {
 
     object Test {
         const val JUNIT = "junit:junit:${Version.JUNIT}"
+        const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:${Version.OKHTTP}"
     }
 
     object AndroidTest {
@@ -35,5 +36,13 @@ object Libs {
 
     object Timber {
         const val TIMBER = "com.jakewharton.timber:timber:${Version.TIMBER}"
+    }
+
+    object Coroutines {
+        const val CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.COROUTINES}"
+    }
+
+    object DataStore {
+        const val DATASTORE = "androidx.datastore:datastore-preferences:${Version.DATASTORE}"
     }
 }

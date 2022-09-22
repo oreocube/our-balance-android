@@ -1,8 +1,19 @@
+import org.jetbrains.kotlin.konan.properties.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+}
+
+val properties = Properties()
+properties.load(project.rootProject.file("local.properties").inputStream())
+
+android {
+    defaultConfig {
+        buildConfigField("String", "BASE_URL", properties.getProperty("BASE_URL"))
+    }
 }
 
 dependencies {
@@ -25,4 +36,6 @@ dependencies {
     implementation(Libs.Network.OKHTTP)
     implementation(Libs.Network.LOGGING_INTERCEPTOR)
     implementation(Libs.Timber.TIMBER)
+    implementation(Libs.Coroutines.CORE)
+    implementation(Libs.DataStore.DATASTORE)
 }

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ourbalance">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".OurBalanceApplication"
         android:allowBackup="true"

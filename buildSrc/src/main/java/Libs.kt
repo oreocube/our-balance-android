@@ -13,6 +13,7 @@ object Libs {
         const val ANDROID_GRADLE_PLUGIN =
             "com.google.dagger:hilt-android-gradle-plugin:${Version.HILT}"
         const val ANDROID = "com.google.dagger:hilt-android:${Version.HILT}"
+        const val CORE = "com.google.dagger:hilt-core:${Version.HILT}"
         const val COMPILER = "com.google.dagger:hilt-compiler:${Version.HILT}"
     }
 

@@ -1,7 +1,7 @@
 package com.ourbalance.domain.repository
 
-import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.model.UserInfo
+import com.ourbalance.domain.result.Result
 
 interface AuthRepository {
     suspend fun login(userInfo: UserInfo): Result<Unit>

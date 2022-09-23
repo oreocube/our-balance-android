@@ -2,6 +2,7 @@ package com.ourbalance.di
 
 import com.ourbalance.BuildConfig
 import com.ourbalance.data.api.AuthService
+import com.ourbalance.data.api.BalanceService
 import com.ourbalance.data.api.TokenInterceptor
 import dagger.Module
 import dagger.Provides
@@ -59,4 +60,8 @@ object RemoteModule {
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
+
+    @Provides
+    @Singleton
+    fun providesBalanceService(retrofit: Retrofit): BalanceService = retrofit.create()
 }

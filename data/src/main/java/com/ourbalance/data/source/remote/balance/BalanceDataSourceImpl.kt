@@ -2,6 +2,7 @@ package com.ourbalance.data.source.remote.balance
 
 import com.ourbalance.data.api.BalanceService
 import com.ourbalance.data.entity.mapper.toModel
+import com.ourbalance.domain.model.BalanceDetail
 import com.ourbalance.domain.model.BalanceInfo
 import com.ourbalance.domain.result.Result
 import javax.inject.Inject
@@ -19,6 +20,20 @@ class BalanceDataSourceImpl @Inject constructor(
                         it.toModel()
                     }
                 )
+            } else {
+                Result.Error(response.error!!)
+            }
+        } catch (e: Throwable) {
+            Result.Error(e.message ?: "Unknown Error")
+        }
+    }
+
+    override suspend fun getBalanceDetail(id: Long): Result<BalanceDetail> {
+        return try {
+            val response = balanceService.getBalanceDetail(id)
+
+            if (response.status == 200) {
+                Result.Success(response.data!!.toModel())
             } else {
                 Result.Error(response.error!!)
             }

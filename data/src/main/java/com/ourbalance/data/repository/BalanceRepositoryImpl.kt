@@ -10,6 +10,6 @@ class BalanceRepositoryImpl @Inject constructor(
     private val balanceDataSource: BalanceDataSource
 ) : BalanceRepository {
     override suspend fun getBalanceList(): Result<List<BalanceInfo>> {
-        TODO("Not yet implemented")
+        return balanceDataSource.getBalanceList()
     }
 }

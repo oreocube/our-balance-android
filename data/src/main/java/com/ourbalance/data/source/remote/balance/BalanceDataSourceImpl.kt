@@ -14,9 +14,11 @@ class BalanceDataSourceImpl @Inject constructor(
             val response = balanceService.getBalanceList()
 
             if (response.status == 200) {
-                Result.Success(response.data!!.balanceList.map {
-                    it.toModel()
-                })
+                Result.Success(
+                    response.data!!.balanceList.map {
+                        it.toModel()
+                    }
+                )
             } else {
                 Result.Error(response.error!!)
             }

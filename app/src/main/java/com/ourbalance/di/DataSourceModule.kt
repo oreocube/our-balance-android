@@ -2,6 +2,8 @@ package com.ourbalance.di
 
 import com.ourbalance.data.source.remote.auth.AuthDataSource
 import com.ourbalance.data.source.remote.auth.AuthDataSourceImpl
+import com.ourbalance.data.source.remote.balance.BalanceDataSource
+import com.ourbalance.data.source.remote.balance.BalanceDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,4 +16,8 @@ abstract class DataSourceModule {
     @Singleton
     @Binds
     abstract fun bindsAuthDataSource(authDataSourceImpl: AuthDataSourceImpl): AuthDataSource
+
+    @Singleton
+    @Binds
+    abstract fun bindsBalanceDataSource(balanceDataSourceImpl: BalanceDataSourceImpl): BalanceDataSource
 }

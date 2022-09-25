@@ -5,6 +5,7 @@ import com.ourbalance.data.entity.mapper.toEntity
 import com.ourbalance.data.entity.mapper.toModel
 import com.ourbalance.domain.model.BalanceDetail
 import com.ourbalance.domain.model.BalanceInfo
+import com.ourbalance.domain.model.ParticipationInfo
 import com.ourbalance.domain.model.RoomInfo
 import javax.inject.Inject
 
@@ -23,5 +24,9 @@ class BalanceDataSourceImpl @Inject constructor(
 
     override suspend fun addBalance(roomInfo: RoomInfo): Long {
         return balanceService.createBalance(roomInfo.toEntity()).roomId
+    }
+
+    override suspend fun participateBalance(participationInfo: ParticipationInfo) {
+        balanceService.participateBalance(participationInfo.toEntity())
     }
 }

@@ -1,4 +1,4 @@
-package com.ourbalance.data.entity
+package com.ourbalance.data.entity.user
 
 data class UserInfoEntity(
     val email: String,

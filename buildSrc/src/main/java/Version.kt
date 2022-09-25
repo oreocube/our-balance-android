@@ -13,4 +13,7 @@ object Version {
     const val TIMBER = "5.0.1"
     const val COROUTINES = "1.6.4"
     const val DATASTORE = "1.0.0"
+    const val MOCKK = "1.11.0"
+    const val JUPITER = "5.9.1"
+    const val ASSERTJ = "3.11.1"
 }

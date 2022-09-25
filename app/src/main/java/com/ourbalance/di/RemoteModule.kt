@@ -3,6 +3,7 @@ package com.ourbalance.di
 import com.ourbalance.BuildConfig
 import com.ourbalance.data.api.AuthService
 import com.ourbalance.data.api.BalanceService
+import com.ourbalance.data.api.ResponseUnboxingInterceptor
 import com.ourbalance.data.api.TokenInterceptor
 import dagger.Module
 import dagger.Provides
@@ -35,9 +36,11 @@ object RemoteModule {
     @Provides
     @Singleton
     fun providesDefaultOkHttpClient(
-        interceptor: TokenInterceptor
+        tokenInterceptor: TokenInterceptor,
+        unboxingInterceptor: ResponseUnboxingInterceptor
     ): OkHttpClient = OkHttpClient.Builder()
-        .addInterceptor(interceptor)
+        .addInterceptor(tokenInterceptor)
+        .addInterceptor(unboxingInterceptor)
         .build()
 
     @Provides

@@ -15,7 +15,7 @@ class GetBalanceListUseCase @Inject constructor(
     suspend operator fun invoke(): Result<List<BalanceInfo>> {
         return try {
             withContext(dispatcher) {
-                balanceRepository.getBalanceList()
+                Result.Success(balanceRepository.getBalanceList())
             }
         } catch (e: Throwable) {
             Result.Error(e.message ?: "Unknown Error")

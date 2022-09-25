@@ -1,17 +1,17 @@
 package com.ourbalance.domain.usecase
 
 import com.ourbalance.domain.di.IoDispatcher
-import com.ourbalance.domain.model.BalanceInfo
+import com.ourbalance.domain.model.ParticipationInfo
 import com.ourbalance.domain.repository.BalanceRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject
 
-class GetBalanceListUseCase @Inject constructor(
+class ParticipateInBalanceUseCase @Inject constructor(
     private val balanceRepository: BalanceRepository,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
-) : UseCase<Unit, List<BalanceInfo>>(dispatcher) {
+) : UseCase<ParticipationInfo, Unit>(dispatcher) {
 
-    override suspend fun execute(parameters: Unit): List<BalanceInfo> {
-        return balanceRepository.getBalanceList()
+    override suspend fun execute(parameters: ParticipationInfo) {
+        balanceRepository.participateBalance(parameters)
     }
 }

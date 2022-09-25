@@ -17,5 +17,10 @@ dependencies {
     implementation(Libs.Timber.TIMBER)
     implementation(Libs.Coroutines.CORE)
     implementation(Libs.DataStore.DATASTORE)
+    testImplementation(Libs.Test.JUNIT)
+    testImplementation(Libs.Test.JUNIT_JUPITER)
+    testImplementation(Libs.Test.ASSERTJ)
     testImplementation(Libs.Test.MOCK_WEB_SERVER)
+    testImplementation(Libs.Test.MOCKK)
+    testImplementation(Libs.Test.JSON)
 }

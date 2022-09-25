@@ -19,7 +19,11 @@ object Libs {
 
     object Test {
         const val JUNIT = "junit:junit:${Version.JUNIT}"
+        const val JUNIT_JUPITER = "org.junit.jupiter:junit-jupiter:${Version.JUPITER}"
+        const val ASSERTJ = "org.assertj:assertj-core:${Version.ASSERTJ}"
         const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:${Version.OKHTTP}"
+        const val MOCKK = "io.mockk:mockk:${Version.MOCKK}"
+        const val JSON = "org.json:json:20180813"
     }
 
     object AndroidTest {

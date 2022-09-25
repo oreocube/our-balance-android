@@ -1,6 +1,6 @@
 package com.ourbalance.data.entity.mapper
 
-import com.ourbalance.data.entity.UserInfoEntity
+import com.ourbalance.data.entity.user.UserInfoEntity
 import com.ourbalance.domain.model.UserInfo
 
 fun UserInfoEntity.toModel(): UserInfo {

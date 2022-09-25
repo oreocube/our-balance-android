@@ -14,11 +14,3 @@ fun <T> getAuthResponse(response: BaseResponse<T>): Result<T> {
         Result.Error(e.message ?: "Unknown Error")
     }
 }
-
-fun <T> getResponse(response: T): T {
-    return try {
-        response
-    } catch (e: Throwable) {
-        throw e
-    }
-}

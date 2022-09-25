@@ -2,6 +2,7 @@ package com.ourbalance.data.api
 
 import com.ourbalance.data.entity.balance.BalanceDetailEntity
 import com.ourbalance.data.entity.balance.BalanceListResponse
+import com.ourbalance.data.entity.room.ParticipationInfoEntity
 import com.ourbalance.data.entity.room.RoomInfoEntity
 import com.ourbalance.data.entity.room.RoomInfoResponse
 import retrofit2.http.Body
@@ -22,4 +23,9 @@ interface BalanceService {
     fun createBalance(
         @Body roomInfo: RoomInfoEntity
     ): RoomInfoResponse
+
+    @POST("/balance/participate")
+    fun participateBalance(
+        @Body participationInfo: ParticipationInfoEntity
+    )
 }

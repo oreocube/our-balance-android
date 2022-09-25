@@ -3,9 +3,9 @@ package com.ourbalance.data.entity.mapper
 import com.ourbalance.data.entity.balance.BalanceDetailEntity
 import com.ourbalance.data.entity.balance.BalanceInfoEntity
 import com.ourbalance.data.entity.balance.ParticipantEntity
-import com.ourbalance.data.entity.room.ParticipationInfoEntity
-import com.ourbalance.data.entity.room.RoomInfoEntity
-import com.ourbalance.domain.model.*
+import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.BalanceInfo
+import com.ourbalance.domain.model.Participant
 
 fun BalanceInfoEntity.toModel(): BalanceInfo {
     return BalanceInfo(
@@ -32,18 +32,5 @@ fun ParticipantEntity.toModel(): Participant {
         participantId = participantId,
         userName = userName,
         amount = amount
-    )
-}
-
-fun RoomInfo.toEntity(): RoomInfoEntity {
-    return RoomInfoEntity(
-        title = title
-    )
-}
-
-fun ParticipationInfo.toEntity(): ParticipationInfoEntity {
-    return ParticipationInfoEntity(
-        roomId = roomId,
-        password = password
     )
 }

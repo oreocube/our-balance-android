@@ -3,14 +3,22 @@ package com.ourbalance.data.ext
 import com.ourbalance.data.entity.BaseResponse
 import com.ourbalance.domain.result.Result
 
-fun <T> getResponse(block: BaseResponse<T>): Result<T> {
+fun <T> getAuthResponse(response: BaseResponse<T>): Result<T> {
     return try {
-        if (block.status == 200) {
-            Result.Success(block.data!!)
+        if (response.status == 200) {
+            Result.Success(response.data!!)
         } else {
-            Result.Error(block.error!!)
+            Result.Error(response.error!!)
         }
     } catch (e: Throwable) {
         Result.Error(e.message ?: "Unknown Error")
+    }
+}
+
+fun <T> getResponse(response: T): T {
+    return try {
+        response
+    } catch (e: Throwable) {
+        throw e
     }
 }

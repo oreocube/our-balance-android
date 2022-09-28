@@ -4,7 +4,11 @@ plugins {
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
-
+android {
+    buildFeatures {
+        dataBinding = true
+    }
+}
 dependencies {
     implementation(project(":domain"))
 

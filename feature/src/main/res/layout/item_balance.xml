@@ -1,39 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/space_default">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/tv_title"
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.ourbalance.domain.model.BalanceDetail" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/maven_pro_extrabold"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="방이름" />
+        android:padding="@dimen/space_default">
 
-    <ProgressBar
-        android:id="@+id/view_balance"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/balance_bar_height"
-        android:layout_marginTop="@dimen/space_text"
-        android:progress="70"
-        android:progressDrawable="@drawable/bg_balance_item"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/maven_pro_extrabold"
+            android:text="@{item.roomTitle}"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="방이름" />
 
-    <TextView
-        android:id="@+id/tv_waiting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_default"
-        android:fontFamily="@font/maven_pro_extrabold"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/view_balance"
-        app:layout_constraintStart_toStartOf="@id/view_balance"
-        app:layout_constraintTop_toTopOf="@id/view_balance"
-        tools:text="waiting.." />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/view_balance"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/balance_bar_height"
+            android:layout_marginTop="@dimen/space_text"
+            android:progress="@{item.me.ratio}"
+            android:progressDrawable="@drawable/bg_balance_item"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_waiting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_default"
+            android:fontFamily="@font/maven_pro_extrabold"
+            android:text="@string/main_waiting_message"
+            android:textColor="@color/black"
+            android:visibility="@{item.full?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@id/view_balance"
+            app:layout_constraintStart_toStartOf="@id/view_balance"
+            app:layout_constraintTop_toTopOf="@id/view_balance" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

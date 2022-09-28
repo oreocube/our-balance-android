@@ -17,15 +17,22 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel by viewModels<MainViewModel>()
+    private val adapter by lazy { BalanceAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView<ActivityMainBinding?>(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
             .apply {
                 vm = viewModel
                 lifecycleOwner = this@MainActivity
             }
+
+        initViews()
         observeData()
+    }
+
+    private fun initViews() = with(binding) {
+        rvBalanceList.adapter = adapter
     }
 
     private fun observeData() {
@@ -34,6 +41,11 @@ class MainActivity : AppCompatActivity() {
                 launch {
                     viewModel.message.collectLatest {
                         showToast(it)
+                    }
+                }
+                launch {
+                    viewModel.balanceList.collectLatest {
+                        adapter.submitList(it)
                     }
                 }
             }

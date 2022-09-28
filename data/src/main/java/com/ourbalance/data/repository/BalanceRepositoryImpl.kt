@@ -2,6 +2,7 @@ package com.ourbalance.data.repository
 
 import com.ourbalance.data.source.remote.balance.BalanceDataSource
 import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.BalanceDetailInfo
 import com.ourbalance.domain.model.BalanceInfo
 import com.ourbalance.domain.model.ParticipationInfo
 import com.ourbalance.domain.model.RoomInfo
@@ -15,8 +16,8 @@ class BalanceRepositoryImpl @Inject constructor(
         return balanceDataSource.getBalanceList()
     }
 
-    override suspend fun getBalanceDetail(id: Long): BalanceDetail {
-        return balanceDataSource.getBalanceDetail(id)
+    override suspend fun getBalanceDetail(balanceDetailInfo: BalanceDetailInfo): BalanceDetail {
+        return balanceDataSource.getBalanceDetail(balanceDetailInfo)
     }
 
     override suspend fun addBalance(roomInfo: RoomInfo): Long {

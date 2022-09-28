@@ -3,8 +3,9 @@ package com.ourbalance.domain.model
 data class BalanceDetail(
     val roomId: Long,
     val roomTitle: String,
-    val currentUserCount: Int,
-    val maxUserCount: Int,
+    val isFull: Boolean,
     val password: String,
-    val participants: List<Participant>
+    val total: Long,
+    val me: Participant,
+    val others: List<Participant>
 )

@@ -13,6 +13,8 @@ data class BalanceDetailEntity(
     val maxUserCount: Int,
     @SerializedName("password")
     val password: String,
+    @SerializedName("sum")
+    val total: Long,
     @SerializedName("userList")
     val participants: List<ParticipantEntity>
 )

@@ -4,6 +4,7 @@ import com.ourbalance.data.api.BalanceService
 import com.ourbalance.data.entity.mapper.toEntity
 import com.ourbalance.data.entity.mapper.toModel
 import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.BalanceDetailInfo
 import com.ourbalance.domain.model.BalanceInfo
 import com.ourbalance.domain.model.ParticipationInfo
 import com.ourbalance.domain.model.RoomInfo
@@ -18,8 +19,9 @@ class BalanceDataSourceImpl @Inject constructor(
         }
     }
 
-    override suspend fun getBalanceDetail(id: Long): BalanceDetail {
-        return balanceService.getBalanceDetail(id).toModel()
+    override suspend fun getBalanceDetail(balanceDetailInfo: BalanceDetailInfo): BalanceDetail {
+        return balanceService.getBalanceDetail(balanceDetailInfo.balanceId)
+            .toModel(balanceDetailInfo.userId)
     }
 
     override suspend fun addBalance(roomInfo: RoomInfo): Long {

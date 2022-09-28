@@ -2,7 +2,7 @@ package com.ourbalance.feature
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ourbalance.domain.model.BalanceInfo
+import com.ourbalance.domain.model.BalanceDetail
 import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.usecase.CheckLoginUseCase
 import com.ourbalance.domain.usecase.GetBalanceListUseCase
@@ -29,7 +29,7 @@ class MainViewModel @Inject constructor(
     private val _isLogin = MutableStateFlow(false)
     val isLogin = _isLogin.asStateFlow()
 
-    private val _balanceList = MutableStateFlow<List<BalanceInfo>>(listOf())
+    private val _balanceList = MutableStateFlow<List<BalanceDetail>>(listOf())
     val balanceList = _balanceList.asStateFlow()
 
     val isEmpty = isLogin.combine(balanceList) { login, list ->
@@ -51,7 +51,7 @@ class MainViewModel @Inject constructor(
 
     fun fetchData() {
         viewModelScope.launch {
-            getBalanceListUseCase(Unit).run {
+            getBalanceListUseCase(10).run {
                 when (this) {
                     is Result.Success -> {
                         _balanceList.value = this.data

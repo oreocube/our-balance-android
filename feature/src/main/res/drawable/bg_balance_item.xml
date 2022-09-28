@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <corners android:radius="@dimen/radius_size" />
+            <stroke
+                android:width="@dimen/balance_bar_stroke_width"
+                android:color="@color/black" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <scale android:scaleWidth="100%">
+            <shape>
+                <corners
+                    android:bottomLeftRadius="@dimen/radius_size"
+                    android:topLeftRadius="@dimen/radius_size" />
+                <solid android:color="@color/yellow" />
+                <stroke
+                    android:width="@dimen/balance_bar_stroke_width"
+                    android:color="@color/black" />
+            </shape>
+        </scale>
+    </item>
+</layer-list>

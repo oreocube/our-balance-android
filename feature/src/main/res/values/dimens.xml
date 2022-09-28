@@ -8,4 +8,6 @@
     <dimen name="text_size_body1">18sp</dimen>
     <dimen name="text_size_body2">16sp</dimen>
     <dimen name="text_size_caption">14sp</dimen>
+    <dimen name="balance_bar_height">48dp</dimen>
+    <dimen name="balance_bar_stroke_width">2dp</dimen>
 </resources>

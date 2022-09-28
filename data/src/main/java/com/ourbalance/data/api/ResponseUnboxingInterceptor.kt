@@ -5,8 +5,9 @@ import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.json.JSONObject
 import timber.log.Timber
+import javax.inject.Inject
 
-class ResponseUnboxingInterceptor : Interceptor {
+class ResponseUnboxingInterceptor @Inject constructor() : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val response = chain.proceed(chain.request())
         val responseJson = response.extractResponseJson()

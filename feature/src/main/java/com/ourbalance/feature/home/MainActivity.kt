@@ -3,14 +3,20 @@ package com.ourbalance.feature.home
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Lifecycle
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
+import com.ourbalance.feature.R
+import com.ourbalance.feature.constant.ADD_BALANCE
+import com.ourbalance.feature.constant.HOME
 import com.ourbalance.feature.databinding.ActivityMainBinding
-import com.ourbalance.feature.ext.showToast
+import com.ourbalance.feature.home.addbalance.AddBalanceFragment
+import com.ourbalance.feature.home.list.BalanceListFragment
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -18,37 +24,29 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = requireNotNull(_binding)
     private val viewModel by viewModels<MainViewModel>()
-    private val adapter by lazy { BalanceAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = ActivityMainBinding.inflate(layoutInflater).apply {
-            vm = viewModel
-            lifecycleOwner = this@MainActivity
-        }
+        _binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.lifecycleOwner = this
         setContentView(binding.root)
-        initViews()
         observeData()
     }
 
-    private fun initViews() = with(binding) {
-        rvBalanceList.adapter = adapter
-    }
-
     private fun observeData() {
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                launch {
-                    viewModel.message.collectLatest {
-                        showToast(it)
+        viewModel.homeScreenState.flowWithLifecycle(lifecycle).onEach {
+            when (it) {
+                HOME -> {
+                    supportFragmentManager.commit {
+                        replace<BalanceListFragment>(R.id.fcv_home, HOME)
                     }
                 }
-                launch {
-                    viewModel.balanceList.collectLatest {
-                        adapter.submitList(it)
+                ADD_BALANCE -> {
+                    supportFragmentManager.commit {
+                        replace<AddBalanceFragment>(R.id.fcv_home, ADD_BALANCE)
                     }
                 }
             }
-        }
+        }.launchIn(lifecycleScope)
     }
 }

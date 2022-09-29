@@ -28,7 +28,9 @@ class BalanceListFragment : Fragment() {
     private val adapter by lazy { BalanceAdapter() }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentBalanceListBinding.inflate(inflater)
         return binding.root
@@ -45,9 +47,6 @@ class BalanceListFragment : Fragment() {
 
     private fun initViews() = with(binding) {
         rvBalanceList.adapter = adapter
-        fabAdd.setOnClickListener {
-
-        }
         ibtSetting.setOnClickListener {
             startActivity(Intent(requireContext(), InformationActivity::class.java))
         }

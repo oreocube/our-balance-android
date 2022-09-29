@@ -1,4 +1,4 @@
-package com.ourbalance.feature
+package com.ourbalance.feature.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

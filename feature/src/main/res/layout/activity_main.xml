@@ -9,14 +9,14 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.MainViewModel" />
+            type="com.ourbalance.feature.home.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:title="OurBalance"
-        tools:context=".MainActivity">
+        tools:context=".home.MainActivity">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"

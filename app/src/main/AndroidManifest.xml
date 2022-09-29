@@ -17,7 +17,7 @@
         android:theme="@style/Theme.OurBalance"
         tools:targetApi="31">
         <activity
-            android:name="com.ourbalance.feature.MainActivity"
+            android:name="com.ourbalance.feature.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

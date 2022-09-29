@@ -1,4 +1,4 @@
-package com.ourbalance.feature
+package com.ourbalance.feature.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

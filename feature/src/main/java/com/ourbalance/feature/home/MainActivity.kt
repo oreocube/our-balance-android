@@ -1,4 +1,4 @@
-package com.ourbalance.feature
+package com.ourbalance.feature.home
 
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.ourbalance.feature.R
 import com.ourbalance.feature.databinding.ActivityMainBinding
 import com.ourbalance.feature.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint

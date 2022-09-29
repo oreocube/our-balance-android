@@ -3,11 +3,9 @@ package com.ourbalance.feature.home
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.ourbalance.feature.R
 import com.ourbalance.feature.databinding.ActivityMainBinding
 import com.ourbalance.feature.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,18 +14,19 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+
+    private var _binding: ActivityMainBinding? = null
+    private val binding get() = requireNotNull(_binding)
     private val viewModel by viewModels<MainViewModel>()
     private val adapter by lazy { BalanceAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-            .apply {
-                vm = viewModel
-                lifecycleOwner = this@MainActivity
-            }
-
+        _binding = ActivityMainBinding.inflate(layoutInflater).apply {
+            vm = viewModel
+            lifecycleOwner = this@MainActivity
+        }
+        setContentView(binding.root)
         initViews()
         observeData()
     }

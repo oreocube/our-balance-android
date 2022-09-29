@@ -25,6 +25,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".feature.addpayment.AddPaymentActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".feature.detail.DetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".feature.information.InformationActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

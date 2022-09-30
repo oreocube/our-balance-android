@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="space_default">16dp</dimen>
+    <dimen name="space_padding">12dp</dimen>
     <dimen name="space_text">8dp</dimen>
+    <dimen name="space_large">48dp</dimen>
+    <dimen name="space_normal">32dp</dimen>
     <dimen name="radius_size">8dp</dimen>
+    <dimen name="radius_large">16dp</dimen>
     <dimen name="text_size_heading">32sp</dimen>
     <dimen name="text_size_subtitle">28sp</dimen>
     <dimen name="text_size_body1">18sp</dimen>
@@ -10,4 +14,6 @@
     <dimen name="text_size_caption">14sp</dimen>
     <dimen name="balance_bar_height">48dp</dimen>
     <dimen name="balance_bar_stroke_width">2dp</dimen>
+    <dimen name="button_size">40dp</dimen>
+    <dimen name="large_button_width">200dp</dimen>
 </resources>

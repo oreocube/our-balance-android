@@ -12,13 +12,31 @@
         android:layout_height="match_parent"
         tools:context=".information.greeting.GreetingFragment">
 
-        <TextView
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Greeting"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/space_normal" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_large"
+            android:text="@string/greeting_title"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:text="@string/navigate_to_login"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

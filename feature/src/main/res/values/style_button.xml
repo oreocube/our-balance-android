@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/radius_large</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/radius_large</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/radius_large</item>
+        <item name="boxCornerRadiusTopStart">@dimen/radius_large</item>
+        <item name="boxStrokeColor">@color/black</item>
+        <item name="boxStrokeWidth">@dimen/balance_bar_stroke_width</item>
+        <item name="startIconTint">@color/black</item>
+        <item name="hintEnabled">false</item>
+        <item name="errorEnabled">true</item>
+    </style>
+</resources>

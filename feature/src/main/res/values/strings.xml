@@ -4,4 +4,19 @@
     <string name="main_login_message">로그인 / 회원가입하여\n 밸런스 리스트를 추가해보세요</string>
     <string name="main_empty_message">하단의 + 버튼을 눌러\n 새로운 밸런스 항목을 생성해보세요</string>
     <string name="main_waiting_message">waiting..</string>
+    <string name="greeting_title">안녕하세요\nBalance입니다</string>
+    <string name="navigate_to_login">회원가입 및 로그인</string>
+    <string name="sign_in_title">Sign In</string>
+    <string name="hint_for_nickname">사용하실 닉네임을 입력해주세요</string>
+    <string name="hint_for_email">이메일을 입력해주세요</string>
+    <string name="hint_for_password">비밀번호를 입력해주세요</string>
+    <string name="hint_for_check_password">비밀번호를 확인해주세요</string>
+    <string name="button_login">로그인</string>
+    <string name="button_signup">회원가입</string>
+    <string name="check_first_time">처음이신가요?</string>
+    <string name="check_exist_account">이미 계정이 있다면?</string>
+    <string name="signup_title">Create Account</string>
+    <string name="error_email_format">이메일 형식이 아닙니다.</string>
+    <string name="error_password_format">비밀번호는 6~15자리로 입력해주세요.</string>
+    <string name="error_password_check">비밀번호가 일치하지 않습니다.</string>
 </resources>

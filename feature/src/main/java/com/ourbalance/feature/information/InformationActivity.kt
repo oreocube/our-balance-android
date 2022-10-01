@@ -8,7 +8,9 @@ import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.GREETING
 import com.ourbalance.feature.databinding.ActivityInformationBinding
 import com.ourbalance.feature.information.greeting.GreetingFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InformationActivity : AppCompatActivity() {
     private var _binding: ActivityInformationBinding? = null
     private val binding get() = requireNotNull(_binding)

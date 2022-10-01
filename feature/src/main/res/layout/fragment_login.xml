@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.information.greeting.login.LoginViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,16 +40,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_normal"
-            android:layout_marginTop="@dimen/space_default"
-            android:hint="@string/hint_for_email"
+            android:layout_marginTop="@dimen/space_normal"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:startIconDrawable="@drawable/ic_person">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/hint_for_email"
                 android:inputType="text"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:text="@={vm.emailInput}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -54,23 +60,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_normal"
-            android:layout_marginTop="@dimen/space_default"
-            android:hint="@string/hint_for_password"
             app:layout_constraintTop_toBottomOf="@id/til_email"
             app:startIconDrawable="@drawable/ic_email">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/hint_for_password"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:text="@={vm.passwordInput}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="@dimen/large_button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_normal"
+            android:layout_marginTop="@dimen/space_default"
+            android:enabled="@{vm.enable}"
+            android:onClick="@{() -> vm.login()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/button_login"
             android:textStyle="bold"

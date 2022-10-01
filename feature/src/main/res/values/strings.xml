@@ -16,4 +16,7 @@
     <string name="check_first_time">처음이신가요?</string>
     <string name="check_exist_account">이미 계정이 있다면?</string>
     <string name="signup_title">Create Account</string>
+    <string name="error_email_format">이메일 형식이 아닙니다.</string>
+    <string name="error_password_format">비밀번호는 6~15자리로 입력해주세요.</string>
+    <string name="error_password_check">비밀번호가 일치하지 않습니다.</string>
 </resources>

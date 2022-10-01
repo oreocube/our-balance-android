@@ -11,7 +11,9 @@ import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.LOGIN
 import com.ourbalance.feature.databinding.FragmentGreetingBinding
 import com.ourbalance.feature.information.greeting.login.LoginFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GreetingFragment : Fragment() {
 
     private var _binding: FragmentGreetingBinding? = null

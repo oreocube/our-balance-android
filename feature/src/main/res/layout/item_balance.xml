@@ -28,15 +28,14 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="방이름" />
 
-        <ProgressBar
+        <com.ourbalance.feature.view.BalanceBar
             android:id="@+id/view_balance"
-            style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="@dimen/balance_bar_height"
             android:layout_marginTop="@dimen/space_text"
-            android:progress="@{item.me.ratio}"
-            android:progressDrawable="@drawable/bg_balance_item"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+            app:fillColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:ratio="@{item.me.ratio}" />
 
         <TextView
             android:id="@+id/tv_waiting"

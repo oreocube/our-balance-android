@@ -13,5 +13,11 @@
         <item name="android:statusBarColor">@color/white</item>
         <!-- Customize your theme here. -->
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="bottomSheetDialogTheme">@style/BalanceBottomSheetDialog</item>
+    </style>
+
+    <style name="RoundedView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

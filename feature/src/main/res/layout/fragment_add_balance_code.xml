@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.home.addbalance.AddBalanceCodeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -51,7 +54,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_for_balance_code"
                 android:inputType="number"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:text="@={vm.code}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -62,6 +66,7 @@
             android:layout_marginStart="@dimen/space_default"
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
+            android:onClick="@{()->vm.close()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/btn_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +82,8 @@
             android:layout_marginStart="@dimen/space_default"
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
+            android:enabled="@{vm.enable}"
+            android:onClick="@{()->vm.participate()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/btn_add_balance"
             app:layout_constraintBottom_toBottomOf="parent"

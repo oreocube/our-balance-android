@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.ourbalance.feature.databinding.FragmentAddBalanceBinding
+import com.ourbalance.feature.databinding.FragmentAddBalanceCodeBinding
 
-class AddBalanceFragment : Fragment() {
+class AddBalanceCodeFragment : Fragment() {
 
-    private var _binding: FragmentAddBalanceBinding? = null
+    private var _binding: FragmentAddBalanceCodeBinding? = null
     private val binding get() = requireNotNull(_binding)
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class AddBalanceFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAddBalanceBinding.inflate(inflater)
+        _binding = FragmentAddBalanceCodeBinding.inflate(inflater)
         return binding.root
     }
 

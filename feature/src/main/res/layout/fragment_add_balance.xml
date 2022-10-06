@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.home.addbalance.AddBalanceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +31,7 @@
             android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
             android:background="@null"
+            android:onClick="@{()->vm.close()}"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +56,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_for_balance_name"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:text="@={vm.title}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -63,6 +68,7 @@
             android:layout_marginStart="@dimen/space_default"
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
+            android:onClick="@{()->vm.close()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/btn_cancel"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,6 +84,8 @@
             android:layout_marginStart="@dimen/space_default"
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
+            android:enabled="@{vm.enable}"
+            android:onClick="@{()->vm.add()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/btn_add_balance"
             app:layout_constraintBottom_toBottomOf="parent"

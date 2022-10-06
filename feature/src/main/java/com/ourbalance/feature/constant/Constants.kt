@@ -3,6 +3,7 @@ package com.ourbalance.feature.constant
 const val HOME = "HOME"
 const val ADD_BALANCE = "ADD_BALANCE"
 const val ADD_BALANCE_CODE = "ADD_BALANCE_CODE"
+const val ADD_BALANCE_BOTTOM_SHEET = "ADD_BALANCE_BOTTOM_SHEET"
 const val PROFILE = "PROFILE"
 const val GREETING = "GREETING"
 const val LOGIN = "LOGIN"

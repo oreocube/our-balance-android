@@ -19,4 +19,16 @@
     <string name="error_email_format">이메일 형식이 아닙니다.</string>
     <string name="error_password_format">비밀번호는 6~15자리로 입력해주세요.</string>
     <string name="error_password_check">비밀번호가 일치하지 않습니다.</string>
+
+    <!-- add balance -->
+    <string name="bottom_sheet_title_add_balance">balance 항목을 추가합니다</string>
+    <string name="close">닫기</string>
+    <string name="title_add_balance">new\nbalance</string>
+    <string name="title_add_balance_code">add\nbalance</string>
+    <string name="hint_for_balance_name">Balance 항목의 이름을 설정해주세요</string>
+    <string name="hint_for_balance_code">초대코드 N자리를 입력하세요</string>
+    <string name="button_add_balance_by_code">초대코드로\n항목 추가</string>
+    <string name="button_add_balance">balance 항목\n직접 생성</string>
+    <string name="btn_cancel">취소하기</string>
+    <string name="btn_add_balance">생성하기</string>
 </resources>

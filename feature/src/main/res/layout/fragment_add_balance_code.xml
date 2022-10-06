@@ -7,13 +7,13 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.home.addbalance.AddBalanceViewModel" />
+            type="com.ourbalance.feature.home.addbalance.AddBalanceCodeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.addbalance.AddBalanceFragment">
+        tools:context=".home.addbalance.AddBalanceCodeFragment">
 
         <TextView
             android:id="@+id/tv_title"
@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_default"
-            android:text="@string/title_add_balance"
+            android:text="@string/title_add_balance_code"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,6 @@
             android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
             android:background="@null"
-            android:onClick="@{()->vm.close()}"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,8 +43,6 @@
             android:layout_marginHorizontal="@dimen/space_default"
             android:layout_marginTop="@dimen/space_large"
             app:boxBackgroundColor="@null"
-            app:counterEnabled="true"
-            app:counterMaxLength="30"
             app:endIconMode="clear_text"
             app:endIconTint="@color/black"
             app:hintEnabled="false"
@@ -55,9 +52,10 @@
                 android:id="@+id/et_balance_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_for_balance_name"
+                android:hint="@string/hint_for_balance_code"
+                android:inputType="number"
                 android:maxLines="1"
-                android:text="@={vm.title}" />
+                android:text="@={vm.code}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -85,7 +83,7 @@
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
             android:enabled="@{vm.enable}"
-            android:onClick="@{()->vm.add()}"
+            android:onClick="@{()->vm.participate()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/btn_add_balance"
             app:layout_constraintBottom_toBottomOf="parent"

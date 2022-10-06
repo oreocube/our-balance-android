@@ -9,24 +9,24 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.ourbalance.feature.databinding.FragmentAddBalanceBinding
+import com.ourbalance.feature.databinding.FragmentAddBalanceCodeBinding
 import com.ourbalance.feature.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class AddBalanceFragment : Fragment() {
+class AddBalanceCodeFragment : Fragment() {
 
-    private var _binding: FragmentAddBalanceBinding? = null
+    private var _binding: FragmentAddBalanceCodeBinding? = null
     private val binding get() = requireNotNull(_binding)
-    private val viewModel by viewModels<AddBalanceViewModel>()
+    private val viewModel by viewModels<AddBalanceCodeViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentAddBalanceBinding.inflate(inflater)
+        _binding = FragmentAddBalanceCodeBinding.inflate(inflater)
         return binding.root
     }
 

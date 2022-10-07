@@ -13,12 +13,77 @@
         tools:context=".addpayment.ChoosePayerFragment">
 
         <TextView
+            android:id="@+id/tv_title"
+            style="@style/PlainText.Bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ChoosePayer"
+            android:layout_margin="@dimen/space_default"
+            android:text="@string/title_choose_payer"
+            app:layout_constraintBottom_toTopOf="@+id/iv_me"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_me"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/space_default"
+            android:src="@color/grey"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toStartOf="@+id/iv_you"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            app:shapeAppearanceOverlay="@style/RoundedView" />
+
+        <TextView
+            android:id="@+id/tv_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_me"
+            app:layout_constraintEnd_toEndOf="@id/iv_me"
+            app:layout_constraintStart_toStartOf="@id/iv_me"
+            app:layout_constraintTop_toTopOf="@id/iv_me"
+            tools:text="찬희" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_you"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="@dimen/space_default"
+            android:src="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@id/iv_me"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_me"
+            app:layout_constraintTop_toTopOf="@id/iv_me"
+            app:shapeAppearanceOverlay="@style/RoundedView" />
+
+        <TextView
+            android:id="@+id/tv_you"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/iv_you"
+            app:layout_constraintEnd_toEndOf="@id/iv_you"
+            app:layout_constraintStart_toStartOf="@id/iv_you"
+            app:layout_constraintTop_toTopOf="@id/iv_you"
+            tools:text="버리" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_default"
+            android:background="@null"
+            android:src="@drawable/ic_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

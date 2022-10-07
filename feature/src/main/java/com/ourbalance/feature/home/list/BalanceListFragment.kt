@@ -5,13 +5,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.ADD_BALANCE_BOTTOM_SHEET
+import com.ourbalance.feature.constant.BALANCE_DETAIL
 import com.ourbalance.feature.databinding.FragmentBalanceListBinding
 import com.ourbalance.feature.home.BalanceAdapter
+import com.ourbalance.feature.home.balance.BalanceDetailFragment
+import com.ourbalance.feature.home.balance.BalanceDetailFragment.Companion.BALANCE_ID
+import com.ourbalance.feature.home.balance.BalanceDetailViewModel.Companion.USER_NAME
 import com.ourbalance.feature.information.InformationActivity
 import com.ourbalance.feature.view.AddBalanceBottomSheet
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +32,7 @@ class BalanceListFragment : Fragment() {
     private var _binding: FragmentBalanceListBinding? = null
     private val binding get() = requireNotNull(_binding)
     private val balanceListViewModel by viewModels<BalanceListViewModel>()
-    private val adapter by lazy { BalanceAdapter() }
+    private val adapter by lazy { BalanceAdapter { navigateToDetail(it) } }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,6 +67,20 @@ class BalanceListFragment : Fragment() {
         balanceList.flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .onEach { adapter.submitList(it) }
             .launchIn(viewLifecycleOwner.lifecycleScope)
+    }
+
+    private fun navigateToDetail(balanceId: Long) {
+        parentFragmentManager.commit {
+            replace<BalanceDetailFragment>(
+                R.id.fcv_home,
+                BALANCE_DETAIL,
+                args = bundleOf(
+                    BALANCE_ID to balanceId,
+                    USER_NAME to "상형"
+                )
+            )
+            addToBackStack(null)
+        }
     }
 
     override fun onDestroyView() {

@@ -17,7 +17,6 @@
         android:layout_height="match_parent"
         tools:context=".home.list.BalanceListFragment">
 
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"
             android:layout_width="wrap_content"

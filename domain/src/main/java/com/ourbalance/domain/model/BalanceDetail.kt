@@ -1,5 +1,7 @@
 package com.ourbalance.domain.model
 
+import java.io.Serializable
+
 data class BalanceDetail(
     val roomId: Long,
     val roomTitle: String,
@@ -8,4 +10,4 @@ data class BalanceDetail(
     val total: Long,
     val me: Participant,
     val others: List<Participant>
-)
+) : Serializable

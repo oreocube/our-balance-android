@@ -17,8 +17,8 @@ fun BalanceInfoEntity.toModel(): BalanceInfo {
     )
 }
 
-fun BalanceDetailEntity.toModel(userId: Long): BalanceDetail {
-    val group = participants.map { it.toModel(total) }.groupBy { it.participantId == userId }
+fun BalanceDetailEntity.toModel(userName: String): BalanceDetail {
+    val group = participants.map { it.toModel(total) }.groupBy { it.userName == userName }
 
     return BalanceDetail(
         roomId = roomId,

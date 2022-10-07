@@ -6,7 +6,6 @@ import com.ourbalance.domain.model.BalanceInfo
 import com.ourbalance.domain.model.ParticipationInfo
 import com.ourbalance.domain.model.RoomInfo
 
-
 interface BalanceRepository {
     suspend fun getBalanceList(): List<BalanceInfo>
     suspend fun getBalanceDetail(balanceDetailInfo: BalanceDetailInfo): BalanceDetail

@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.home.balance.BalanceDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".detail.balance.BalanceDetailFragment">
+        tools:context=".home.balance.BalanceDetailFragment">
 
-        <TextView
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BalanceDetail"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/space_default" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/space_default" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/space_default" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/space_default" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_large"
+            android:text="@{vm.balanceDetailItem.roomTitle,default=``}"
+            app:layout_constraintEnd_toStartOf="@id/btn_list"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toTopOf="@id/gl_top"
+            tools:text="avery vs charlie" />
+
+        <ImageButton
+            android:id="@+id/btn_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:onClick="@{()->vm.close()}"
+            android:src="@drawable/ic_setting"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintTop_toTopOf="@id/gl_top" />
+
+        <include
+            android:id="@+id/view_compare"
+            layout="@layout/view_compare_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:visibility="@{vm.balanceDetailItem.full?View.VISIBLE:View.GONE,default=gone}"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            bind:diff="@{vm.diff}"
+            bind:me="@{vm.user}"
+            bind:other="@{vm.otherName}" />
+
+        <include
+            android:id="@+id/view_invitation_code"
+            layout="@layout/view_invitation_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_normal"
+            android:visibility="@{vm.balanceDetailItem.full?View.GONE:View.VISIBLE,default=gone}"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            bind:code="@{vm.balanceDetailItem.roomId}" />
+
+        <TextView
+            android:id="@+id/tv_list_empty"
+            style="@style/PlainText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_default"
+            android:background="@drawable/bg_message"
+            android:gravity="center"
+            android:text="@string/message_empty_payment"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/ibt_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_add_white"
+            app:layout_constraintBottom_toBottomOf="@id/gl_bottom"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/br_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="view_compare, view_invitation_code, tv_list_empty" />
+
+        <View
+            android:id="@+id/view_me"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/space_default"
+            android:layout_marginEnd="@dimen/space_text"
+            android:layout_marginBottom="@dimen/space_default"
+            android:background="@drawable/bg_message"
+            android:backgroundTint="@color/yellow"
+            app:layout_constraintBottom_toTopOf="@id/ibt_add"
+            app:layout_constraintEnd_toStartOf="@id/view_other"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/br_top" />
+
+        <View
+            android:id="@+id/view_other"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/space_text"
+            android:layout_marginTop="@dimen/space_default"
+            android:layout_marginBottom="@dimen/space_default"
+            android:background="@drawable/bg_message"
+            android:backgroundTint="@color/purple"
+            app:layout_constraintBottom_toTopOf="@id/ibt_add"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/view_me"
+            app:layout_constraintTop_toBottomOf="@id/br_top" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

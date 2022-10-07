@@ -31,4 +31,26 @@
     <string name="button_add_balance">balance 항목\n직접 생성</string>
     <string name="btn_cancel">취소하기</string>
     <string name="btn_add_balance">생성하기</string>
+
+    <!-- balance detail -->
+    <string name="label_than">님이&#160;</string>
+    <string name="message_compare">님을 위해 더 지불한 금액</string>
+    <string name="label_invitation_code">초대코드 : %d</string>
+
+    <!-- add payment -->
+    <string name="title_add_payment">new\npayment</string>
+    <string name="label_payer">가</string>
+    <string name="label_amount">을 냈어요</string>
+    <string name="label_content">를 위해</string>
+    <string name="title_choose_payer">누가 지불했나요?</string>
+    <string name="title_specify_amount">얼마를 지불했나요?</string>
+    <string name="title_specify_content">어떤 비용을 지불했나요?</string>
+    <string name="title_specify_date">언제 지불했나요?</string>
+    <string name="hint_for_amount">지불금액</string>
+    <string name="hint_for_content">지불항목</string>
+    <string name="slash_label">/</string>
+    <string name="button_add_payment">비용 추가하기</string>
+    <string name="currency_format">%,d원</string>
+    <string name="message_invitation_code">🎉 함께할 상대를 초대하세요 🎉</string>
+    <string name="message_empty_payment">\n+ 버튼을 눌러 정산항목을 추가해보세요\n</string>
 </resources>

@@ -21,7 +21,7 @@ class BalanceDataSourceImpl @Inject constructor(
 
     override suspend fun getBalanceDetail(balanceDetailInfo: BalanceDetailInfo): BalanceDetail {
         return balanceService.getBalanceDetail(balanceDetailInfo.balanceId)
-            .toModel(balanceDetailInfo.userId)
+            .toModel(balanceDetailInfo.userName)
     }
 
     override suspend fun addBalance(roomInfo: RoomInfo): Long {

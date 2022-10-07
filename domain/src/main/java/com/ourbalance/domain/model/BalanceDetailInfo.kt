@@ -1,6 +1,6 @@
 package com.ourbalance.domain.model
 
 data class BalanceDetailInfo(
-    val userId: Long,
+    val userName: String,
     val balanceId: Long
 )

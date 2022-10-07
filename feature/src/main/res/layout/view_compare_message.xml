@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="me"
+            type="String" />
+
+        <variable
+            name="other"
+            type="String" />
+
+        <variable
+            name="diff"
+            type="long" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_message"
+        android:orientation="vertical"
+        android:padding="@dimen/space_default">
+
+        <TextView
+            android:id="@+id/tv_me"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{me}"
+            app:layout_constraintEnd_toStartOf="@id/tv_than_label"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="에이브리" />
+
+        <TextView
+            android:id="@+id/tv_than_label"
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_than"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_me"
+            app:layout_constraintEnd_toStartOf="@id/tv_other"
+            app:layout_constraintStart_toEndOf="@id/tv_me" />
+
+        <TextView
+            android:id="@+id/tv_other"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{other}"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_than_label"
+            app:layout_constraintEnd_toStartOf="@id/tv_compare"
+            app:layout_constraintStart_toEndOf="@id/tv_than_label"
+            tools:text="상형" />
+
+        <TextView
+            android:id="@+id/tv_compare"
+            style="@style/PlainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/message_compare"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_other"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_other" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/TitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_text"
+            android:gravity="center"
+            android:text="@{@string/currency_format(diff)}"
+            android:textSize="@dimen/text_size_subtitle"
+            app:layout_constraintTop_toBottomOf="@id/tv_compare"
+            tools:text="30,000원" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

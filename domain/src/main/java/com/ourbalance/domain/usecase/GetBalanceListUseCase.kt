@@ -14,9 +14,9 @@ import javax.inject.Inject
 class GetBalanceListUseCase @Inject constructor(
     private val balanceRepository: BalanceRepository,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
-) : UseCase<Long, List<BalanceDetail>>(dispatcher) {
+) : UseCase<String, List<BalanceDetail>>(dispatcher) {
 
-    override suspend fun execute(parameters: Long): List<BalanceDetail> {
+    override suspend fun execute(parameters: String): List<BalanceDetail> {
         val result = mutableListOf<Deferred<BalanceDetail>>()
         val list = balanceRepository.getBalanceList()
 
@@ -25,7 +25,7 @@ class GetBalanceListUseCase @Inject constructor(
                 val item = async {
                     balanceRepository.getBalanceDetail(
                         BalanceDetailInfo(
-                            userId = parameters,
+                            userName = parameters,
                             balanceId = balanceInfo.roomId
                         )
                     )

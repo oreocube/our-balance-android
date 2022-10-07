@@ -51,7 +51,7 @@ class BalanceListViewModel @Inject constructor(
 
     fun fetchData() {
         viewModelScope.launch {
-            getBalanceListUseCase(10).run {
+            getBalanceListUseCase("상형").run {
                 when (this) {
                     is Result.Success -> {
                         Timber.d(this.data.toString())

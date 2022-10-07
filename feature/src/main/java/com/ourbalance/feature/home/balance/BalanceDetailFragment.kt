@@ -59,12 +59,26 @@ class BalanceDetailFragment : Fragment() {
                     }
                 }
                 launch {
+                    viewModel.addEvent.collect {
+                        navigateToAddPayment(balanceDetail)
+                    }
+                }
+                launch {
                     viewModel.message.collect {
                         requireContext().showToast(it)
                     }
                 }
             }
         }
+    }
+
+    private fun navigateToAddPayment(balanceDetail: BalanceDetail) {
+        startActivity(
+            AddPaymentActivity.newIntent(
+                context = requireContext(),
+                balanceDetail = balanceDetail
+            )
+        )
     }
 
     override fun onDestroyView() {

@@ -32,6 +32,9 @@ class BalanceDetailViewModel @AssistedInject constructor(
     private val _closeEvent = MutableSharedFlow<Unit>()
     val closeEvent = _closeEvent.asSharedFlow()
 
+    private val _addEvent = MutableSharedFlow<Unit>()
+    val addEvent = _addEvent.asSharedFlow()
+
     private val _message = MutableSharedFlow<String>()
     val message = _message.asSharedFlow()
 
@@ -71,6 +74,12 @@ class BalanceDetailViewModel @AssistedInject constructor(
     fun close() {
         viewModelScope.launch {
             _closeEvent.emit(Unit)
+        }
+    }
+
+    fun add() {
+        viewModelScope.launch {
+            _addEvent.emit(Unit)
         }
     }
 

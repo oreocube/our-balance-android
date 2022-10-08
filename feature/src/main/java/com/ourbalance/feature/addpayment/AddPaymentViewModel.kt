@@ -42,9 +42,13 @@ class AddPaymentViewModel @AssistedInject constructor(
     val otherTurn = MutableStateFlow(false)
 
     private val payerId = myTurn.combine(otherTurn) { me, other ->
-        if (me and other) -1
-        else if (me) balanceDetail.me.participantId
-        else balanceDetail.others[0].participantId
+        if (me and other) {
+            -1
+        } else if (me) {
+            balanceDetail.me.participantId
+        } else {
+            balanceDetail.others[0].participantId
+        }
     }
 
     fun setMyTurn(check: Boolean) {

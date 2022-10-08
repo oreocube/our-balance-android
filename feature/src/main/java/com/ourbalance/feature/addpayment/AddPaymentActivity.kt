@@ -83,6 +83,14 @@ class AddPaymentActivity : AppCompatActivity() {
         }.launchIn(lifecycleScope)
     }
 
+    override fun onBackPressed() {
+        if (supportFragmentManager.backStackEntryCount > 0) {
+            viewModel.prev()
+        } else {
+            super.onBackPressed()
+        }
+    }
+
     companion object {
         const val BALANCE_DETAIL = "BALANCE_DETAIL"
 

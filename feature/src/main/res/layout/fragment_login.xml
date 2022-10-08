@@ -75,6 +75,7 @@
 
         <Button
             android:id="@+id/btn_login"
+            style="@style/LargeButton"
             android:layout_width="@dimen/large_button_width"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_default"
@@ -82,8 +83,6 @@
             android:onClick="@{() -> vm.login()}"
             android:paddingVertical="@dimen/space_padding"
             android:text="@string/button_login"
-            android:textStyle="bold"
-            app:cornerRadius="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/til_password" />

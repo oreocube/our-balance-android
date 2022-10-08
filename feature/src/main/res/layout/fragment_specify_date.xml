@@ -5,12 +5,82 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.addpayment.AddPaymentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".addpayment.SpecifyContentFragment">
+
+        <TextView
+            android:id="@+id/tv_payer"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_default"
+            android:text="@{vm.myTurn?vm.userName:vm.otherName}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="버리"
+            tools:textColor="@color/purple" />
+
+        <TextView
+            android:id="@+id/tv_payer_label"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_payer"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_payer"
+            app:layout_constraintStart_toEndOf="@id/tv_payer" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.content}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
+            app:layout_constraintStart_toStartOf="@id/tv_payer"
+            app:layout_constraintTop_toBottomOf="@id/tv_payer"
+            tools:text="저녁식사"
+            tools:textColor="@color/purple" />
+
+        <TextView
+            android:id="@+id/tv_content_label"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_content"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_content"
+            app:layout_constraintStart_toEndOf="@id/tv_content" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/currency_format(vm.amount)}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
+            app:layout_constraintStart_toStartOf="@id/tv_payer"
+            app:layout_constraintTop_toBottomOf="@id/tv_content"
+            tools:text="50,000원"
+            tools:textColor="@color/purple" />
+
+        <TextView
+            android:id="@+id/tv_amount_label"
+            style="@style/PlainText.Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_amount"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_amount"
+            app:layout_constraintStart_toEndOf="@id/tv_amount" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -32,7 +102,8 @@
             android:layout_marginVertical="@dimen/space_default"
             android:background="@null"
             android:gravity="center"
-            android:textColor="@color/purple"
+            android:text="@={vm.date}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +111,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
-            tools:text="2022.07.05" />
+            tools:text="2022.07.05"
+            tools:textColor="@color/purple" />
 
         <ImageButton
             android:id="@+id/btn_prev"
@@ -48,6 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_default"
             android:background="@null"
+            android:onClick="@{()->vm.prev()}"
             android:src="@drawable/ic_prev"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_next"
@@ -59,6 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_default"
             android:background="@null"
+            android:onClick="@{()->vm.next()}"
             android:src="@drawable/ic_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

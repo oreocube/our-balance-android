@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.addpayment.AddPaymentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,87 +15,16 @@
         android:layout_height="match_parent"
         tools:context=".addpayment.AddPaymentActivity">
 
-        <TextView
-            android:id="@+id/tv_title"
-            style="@style/TitleText"
+        <ImageButton
+            android:id="@+id/btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_default"
-            android:text="@string/title_add_payment"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="gone" />
-
-        <androidx.constraintlayout.widget.Group
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tv_payer, tv_payer_label" />
-
-        <TextView
-            android:id="@+id/tv_payer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_default"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="버리" />
-
-        <TextView
-            android:id="@+id/tv_payer_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_payer"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv_payer"
-            app:layout_constraintStart_toEndOf="@id/tv_payer" />
-
-        <androidx.constraintlayout.widget.Group
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tv_content, tv_content_label" />
-
-        <TextView
-            android:id="@+id/tv_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/tv_payer"
-            app:layout_constraintTop_toBottomOf="@id/tv_payer"
-            tools:text="저녁식사" />
-
-        <TextView
-            android:id="@+id/tv_content_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_content"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv_content"
-            app:layout_constraintStart_toEndOf="@id/tv_content" />
-
-        <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/br_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="bottom"
-            app:constraint_referenced_ids="tv_content,tv_payer" />
-
-        <androidx.constraintlayout.widget.Group
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:constraint_referenced_ids="tv_amount, tv_amount_label" />
-
-        <TextView
-            android:id="@+id/tv_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/tv_payer"
-            app:layout_constraintTop_toBottomOf="@id/br_amount"
-            tools:text="50,000원" />
-
-        <TextView
-            android:id="@+id/tv_amount_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_amount"
-            app:layout_constraintBaseline_toBaselineOf="@id/tv_amount"
-            app:layout_constraintStart_toEndOf="@id/tv_amount" />
+            android:background="@null"
+            android:onClick="@{()->vm.close()}"
+            android:src="@drawable/ic_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv_payment"

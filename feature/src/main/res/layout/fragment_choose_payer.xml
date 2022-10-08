@@ -5,12 +5,25 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.addpayment.AddPaymentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".addpayment.ChoosePayerFragment">
+
+        <TextView
+            android:id="@+id/tv_main_title"
+            style="@style/TitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_default"
+            android:text="@string/title_add_payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_title"
@@ -31,20 +44,25 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="@dimen/space_default"
-            android:src="@color/grey"
+            android:onClick="@{()->vm.setMyTurn(true)}"
+            android:src="@{vm.myTurn?@color/yellow:@color/unselected}"
             app:layout_constraintBottom_toTopOf="@id/btn_next"
             app:layout_constraintEnd_toStartOf="@+id/iv_you"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            app:shapeAppearanceOverlay="@style/RoundedView" />
+            app:shapeAppearanceOverlay="@style/RoundedView"
+            tools:src="@color/unselected" />
 
         <TextView
             android:id="@+id/tv_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/imcre_soojin_regular"
+            android:text="@{vm.userName}"
             android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body1"
             app:layout_constraintBottom_toBottomOf="@id/iv_me"
             app:layout_constraintEnd_toEndOf="@id/iv_me"
             app:layout_constraintStart_toStartOf="@id/iv_me"
@@ -56,19 +74,24 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="@dimen/space_default"
-            android:src="@color/purple"
+            android:onClick="@{()->vm.setMyTurn(false)}"
+            android:src="@{vm.otherTurn?@color/purple:@color/unselected}"
             app:layout_constraintBottom_toBottomOf="@id/iv_me"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/iv_me"
             app:layout_constraintTop_toTopOf="@id/iv_me"
-            app:shapeAppearanceOverlay="@style/RoundedView" />
+            app:shapeAppearanceOverlay="@style/RoundedView"
+            tools:src="@color/unselected" />
 
         <TextView
             android:id="@+id/tv_you"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/imcre_soojin_regular"
+            android:text="@{vm.otherName}"
             android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body1"
             app:layout_constraintBottom_toBottomOf="@id/iv_you"
             app:layout_constraintEnd_toEndOf="@id/iv_you"
             app:layout_constraintStart_toStartOf="@id/iv_you"
@@ -81,6 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_default"
             android:background="@null"
+            android:onClick="@{()->vm.next()}"
             android:src="@drawable/ic_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

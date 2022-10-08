@@ -39,7 +39,7 @@
 
     <!-- add payment -->
     <string name="title_add_payment">new\npayment</string>
-    <string name="label_payer">가</string>
+    <string name="label_payer">님이</string>
     <string name="label_amount">을 냈어요</string>
     <string name="label_content">를 위해</string>
     <string name="title_choose_payer">누가 지불했나요?</string>

@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="vm"
+            type="com.ourbalance.feature.addpayment.AddPaymentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,14 +21,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_text"
-            android:textColor="@color/purple"
+            android:text="@{vm.myTurn?vm.userName:vm.otherName}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             app:layout_constraintBottom_toTopOf="@id/tv_amount"
             app:layout_constraintEnd_toStartOf="@id/tv_payer_label"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="찰리" />
+            tools:text="찰리"
+            tools:textColor="@color/purple" />
 
         <TextView
             android:id="@+id/tv_payer_label"
@@ -43,13 +48,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/space_text"
-            android:textColor="@color/purple"
+            android:text="@{@string/currency_format(vm.amount)}"
+            android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             app:layout_constraintBottom_toTopOf="@id/tv_content"
             app:layout_constraintEnd_toStartOf="@id/tv_amount_label"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_payer"
-            tools:text="50,000원" />
+            tools:text="50,000원"
+            tools:textColor="@color/purple" />
 
         <TextView
             android:id="@+id/tv_amount_label"
@@ -65,6 +72,7 @@
             android:id="@+id/tv_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.content}"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/btn_add_payment"
             app:layout_constraintEnd_toStartOf="@+id/tv_slash"
@@ -91,6 +99,7 @@
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{vm.date}"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/tv_slash"
             app:layout_constraintEnd_toEndOf="parent"

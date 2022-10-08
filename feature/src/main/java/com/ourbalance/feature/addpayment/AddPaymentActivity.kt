@@ -13,10 +13,10 @@ import androidx.lifecycle.lifecycleScope
 import com.ourbalance.domain.model.BalanceDetail
 import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.STEP_CHOOSE_PAYER
+import com.ourbalance.feature.constant.STEP_CONFIRMATION
 import com.ourbalance.feature.constant.STEP_SPECIFY_AMOUNT
 import com.ourbalance.feature.constant.STEP_SPECIFY_CONTENT
 import com.ourbalance.feature.constant.STEP_SPECIFY_DATE
-import com.ourbalance.feature.constant.STEP_CONFIRMATION
 import com.ourbalance.feature.databinding.ActivityAddPaymentBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn

@@ -5,9 +5,7 @@ import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 
 @BindingAdapter("android:text")
-fun bindLongInText(
-    editText: EditText, newValue: Long?
-) {
+fun bindLongInText(editText: EditText, newValue: Long?) {
     val oldValue = editText.text
     if (oldValue == null && newValue == null) return
     if (oldValue != null && newValue != null && oldValue.toString() == newValue.toString()) return

@@ -2,7 +2,6 @@ package com.ourbalance.data.source.remote.payment
 
 import com.ourbalance.data.api.PaymentService
 import com.ourbalance.data.entity.mapper.toEntity
-import com.ourbalance.data.entity.payment.PaymentInfoEntity
 import com.ourbalance.domain.model.PaymentInfo
 import javax.inject.Inject
 

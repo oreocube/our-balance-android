@@ -9,7 +9,7 @@ import javax.inject.Inject
 class AddPaymentUseCase @Inject constructor(
     private val paymentRepository: PaymentRepository,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
-): UseCase<PaymentInfo, Long>(dispatcher) {
+) : UseCase<PaymentInfo, Long>(dispatcher) {
 
     override suspend fun execute(parameters: PaymentInfo): Long {
         return paymentRepository.addPayment(parameters)

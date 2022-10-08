@@ -18,6 +18,7 @@ import com.ourbalance.feature.constant.STEP_SPECIFY_AMOUNT
 import com.ourbalance.feature.constant.STEP_SPECIFY_CONTENT
 import com.ourbalance.feature.constant.STEP_SPECIFY_DATE
 import com.ourbalance.feature.databinding.ActivityAddPaymentBinding
+import com.ourbalance.feature.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -83,6 +84,14 @@ class AddPaymentActivity : AppCompatActivity() {
         }.launchIn(lifecycleScope)
 
         viewModel.closeEvent.flowWithLifecycle(lifecycle).onEach {
+            finish()
+        }.launchIn(lifecycleScope)
+
+        viewModel.message.flowWithLifecycle(lifecycle).onEach {
+            showToast(it)
+        }.launchIn(lifecycleScope)
+
+        viewModel.successEvent.flowWithLifecycle(lifecycle).onEach {
             finish()
         }.launchIn(lifecycleScope)
     }

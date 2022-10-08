@@ -9,16 +9,16 @@ import com.ourbalance.domain.model.BalanceDetail
 import com.ourbalance.feature.databinding.ItemBalanceBinding
 
 class BalanceAdapter(
-    private val onItemClick: (Long) -> Unit
+    private val onItemClick: (BalanceDetail) -> Unit
 ) : ListAdapter<BalanceDetail, BalanceAdapter.ViewHolder>(diffUtil) {
 
     class ViewHolder(
         private val binding: ItemBalanceBinding,
-        private val onItemClick: (Long) -> Unit
+        private val onItemClick: (BalanceDetail) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: BalanceDetail) {
             binding.item = item
-            itemView.setOnClickListener { onItemClick(item.roomId) }
+            itemView.setOnClickListener { onItemClick(item) }
         }
     }
 

@@ -9,6 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.feature.addpayment.AddPaymentActivity
+import com.ourbalance.feature.constant.BALANCE_DETAIL
 import com.ourbalance.feature.databinding.FragmentBalanceDetailBinding
 import com.ourbalance.feature.ext.showToast
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,11 +25,12 @@ class BalanceDetailFragment : Fragment() {
     lateinit var factory: BalanceDetailViewModelFactory
     private var _binding: FragmentBalanceDetailBinding? = null
     private val binding get() = requireNotNull(_binding)
+    private val balanceDetail by lazy { requireArguments().get(BALANCE_DETAIL) as BalanceDetail }
     private val viewModel: BalanceDetailViewModel by viewModels {
         BalanceDetailViewModel.provideFactory(
             assistedFactory = factory,
-            balanceId = requireArguments().getLong(BALANCE_ID),
-            userName = requireArguments().getString(USER_NAME) ?: ""
+            balanceId = balanceDetail.roomId,
+            userName = balanceDetail.me.userName
         )
     }
 
@@ -55,6 +59,11 @@ class BalanceDetailFragment : Fragment() {
                     }
                 }
                 launch {
+                    viewModel.addEvent.collect {
+                        navigateToAddPayment(balanceDetail)
+                    }
+                }
+                launch {
                     viewModel.message.collect {
                         requireContext().showToast(it)
                     }
@@ -63,13 +72,17 @@ class BalanceDetailFragment : Fragment() {
         }
     }
 
+    private fun navigateToAddPayment(balanceDetail: BalanceDetail) {
+        startActivity(
+            AddPaymentActivity.newIntent(
+                context = requireContext(),
+                balanceDetail = balanceDetail
+            )
+        )
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    companion object {
-        const val BALANCE_ID = "BALANCE_ID"
-        const val USER_NAME = "USER_NAME"
     }
 }

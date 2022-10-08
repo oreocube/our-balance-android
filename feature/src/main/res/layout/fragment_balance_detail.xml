@@ -114,7 +114,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
+            android:onClick="@{()->vm.add()}"
             android:src="@drawable/ic_add_white"
+            android:visibility="@{vm.balanceDetailItem.full?View.VISIBLE:View.INVISIBLE,default=invisible}"
             app:layout_constraintBottom_toBottomOf="@id/gl_bottom"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start" />

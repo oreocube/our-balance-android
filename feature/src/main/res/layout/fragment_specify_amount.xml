@@ -60,6 +60,7 @@
             android:gravity="center"
             android:hint="@string/hint_for_amount"
             android:inputType="numberDecimal"
+            android:text="@={vm.amount}"
             android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"
@@ -70,26 +71,28 @@
             tools:text="50,000원"
             tools:textColor="@color/purple" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_prev"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/OutlinedButton.Icon"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
             android:onClick="@{()->vm.prev()}"
-            android:src="@drawable/ic_prev"
+            app:icon="@drawable/ic_prev_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btn_next"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/RoundedButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
+            android:enabled="@{vm.amountValid}"
             android:onClick="@{()->vm.next()}"
-            android:src="@drawable/ic_next"
+            app:icon="@drawable/ic_next_24"
+            app:iconTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_prev" />

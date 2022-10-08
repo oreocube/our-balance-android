@@ -19,9 +19,34 @@
         <item name="cornerRadius">50dp</item>
     </style>
 
-    <style name="LargeButton.OutLined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="OutLinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:textStyle">bold</item>
         <item name="strokeColor">@color/black</item>
         <item name="cornerRadius">50dp</item>
+    </style>
+
+    <style name="OutlinedButton.Icon" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="shapeAppearanceOverlay">@style/RoundedButtonShape</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="strokeColor">@color/black</item>
+    </style>
+
+    <style name="RoundedButton" parent="Widget.MaterialComponents.Button.Icon">
+        <item name="shapeAppearanceOverlay">@style/RoundedButtonShape</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="iconPadding">0dp</item>
+    </style>
+
+    <style name="RoundedButtonShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="borderWidth">1dp</item>
     </style>
 </resources>

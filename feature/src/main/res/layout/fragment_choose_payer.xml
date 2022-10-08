@@ -98,14 +98,15 @@
             app:layout_constraintTop_toTopOf="@id/iv_you"
             tools:text="버리" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/RoundedButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
+            android:enabled="@{vm.payerValid}"
             android:onClick="@{()->vm.next()}"
-            android:src="@drawable/ic_next"
+            app:icon="@drawable/ic_next_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -104,7 +104,7 @@
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
+            android:enabled="@{vm.payerValid}"
             android:onClick="@{()->vm.next()}"
             app:icon="@drawable/ic_next_24"
             app:layout_constraintBottom_toBottomOf="parent"

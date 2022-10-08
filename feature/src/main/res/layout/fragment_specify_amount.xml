@@ -60,6 +60,7 @@
             android:gravity="center"
             android:hint="@string/hint_for_amount"
             android:inputType="numberDecimal"
+            android:text="@={vm.amount}"
             android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"

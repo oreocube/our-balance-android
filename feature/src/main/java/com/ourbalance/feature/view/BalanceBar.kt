@@ -17,13 +17,13 @@ class BalanceBar constructor(
     attrs: AttributeSet? = null
 ) : View(context, attrs) {
 
-    private lateinit var borderRect: RectF
-    private lateinit var ratioRect: RectF
-    private lateinit var borderPath: Path
-    private lateinit var ratioPath: Path
+    private var borderRect = RectF(0f, 0f, 0f, 0f)
+    private var ratioRect = RectF(0f, 0f, 0f, 0f)
+    private var borderPath = Path()
+    private var ratioPath = Path()
 
     private val cornerRadius = 32f
-    private var fillColor: Int = Color.YELLOW
+    private var fillColor: Int = Color.BLACK
     private var ratio = 0
     private var w: Int = 0
     private var h: Int = 0
@@ -36,13 +36,12 @@ class BalanceBar constructor(
 
     private val paint: Paint = Paint(ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
-        color = fillColor
     }
 
     init {
         context.theme.obtainStyledAttributes(attrs, R.styleable.BalanceBar, 0, 0).apply {
             try {
-                fillColor = getColor(R.styleable.BalanceBar_fillColor, 0)
+                fillColor = getColor(R.styleable.BalanceBar_fillColor, 0xFF000000.toInt())
                 ratio = getInteger(R.styleable.BalanceBar_ratio, 0)
             } finally {
                 recycle()
@@ -93,7 +92,9 @@ class BalanceBar constructor(
         super.onDraw(canvas)
 
         with(canvas) {
-            drawPath(ratioPath, paint)
+            drawPath(ratioPath, paint.apply {
+                color = fillColor
+            })
             drawPath(ratioPath, strokePaint)
             drawPath(borderPath, strokePaint)
         }

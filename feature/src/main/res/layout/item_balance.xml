@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/balance_bar_height"
             android:layout_marginTop="@dimen/space_text"
-            app:fillColor="@color/yellow"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             app:ratio="@{item.me.ratio}" />
 

@@ -24,7 +24,8 @@ class PaymentListViewModel @Inject constructor(
 
     val pagingData: Flow<PagingData<PaymentItemModel>> =
         paymentRepository.getAllPaymentsForParticipant(
-            balanceId = 100, participantId = 1
+            balanceId = 100,
+            participantId = 1
         ).catch { Timber.d(it.message) }.cachedIn(viewModelScope)
 
 }

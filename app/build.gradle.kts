@@ -28,6 +28,8 @@ dependencies {
     implementation(Libs.AndroidX.APPCOMPAT)
     implementation(Libs.AndroidX.MATERIAL)
     implementation(Libs.AndroidX.CONSTRAINT_LAYOUT)
+    implementation(Libs.Paging.PAGING)
+    implementation(Libs.Paging.COMMON)
     testImplementation(Libs.Test.JUNIT)
     androidTestImplementation(Libs.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Libs.AndroidTest.ESPRESSO_CORE)

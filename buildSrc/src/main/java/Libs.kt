@@ -49,4 +49,9 @@ object Libs {
     object DataStore {
         const val DATASTORE = "androidx.datastore:datastore-preferences:${Version.DATASTORE}"
     }
+
+    object Paging {
+        const val PAGING = "androidx.paging:paging-runtime:${Version.PAGING}"
+        const val COMMON = "androidx.paging:paging-common:${Version.PAGING}"
+    }
 }

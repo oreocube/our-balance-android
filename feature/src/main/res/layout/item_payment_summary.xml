@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="summary"
+            type="com.ourbalance.feature.payment.PaymentSummary" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_default">
+
+        <TextView
+            android:id="@+id/tv_payer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_large"
+            android:text="@{summary.username}"
+            android:textAppearance="@style/PlainText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="나" />
+
+        <TextView
+            android:id="@+id/tv_payer_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_summary_payer_label"
+            android:textAppearance="@style/PlainText"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_payer"
+            app:layout_constraintStart_toEndOf="@id/tv_payer" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_text"
+            android:text="@{@string/currency_format(summary.amount)}"
+            android:textAppearance="@style/PlainText.Bold"
+            app:layout_constraintEnd_toStartOf="@id/tv_total"
+            app:layout_constraintStart_toStartOf="@id/tv_payer"
+            app:layout_constraintTop_toBottomOf="@id/tv_payer"
+            tools:text="200,000원" />
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/currency_format(summary.total)}"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_caption"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="총 380,000원" />
+
+        <com.ourbalance.feature.view.BalanceBar
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/balance_bar_height"
+            android:layout_marginTop="@dimen/space_text"
+            android:layout_marginBottom="@dimen/space_text"
+            app:fillColor="@{summary.me?@color/yellow:@color/purple}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            app:ratio="@{summary.ratio}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

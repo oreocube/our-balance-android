@@ -16,4 +16,5 @@ object Version {
     const val MOCKK = "1.11.0"
     const val JUPITER = "5.9.1"
     const val ASSERTJ = "3.11.1"
+    const val PAGING = "3.1.1"
 }

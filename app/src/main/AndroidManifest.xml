@@ -32,7 +32,7 @@
             android:exported="false" />
 
         <activity
-            android:name=".feature.detail.DetailActivity"
+            android:name=".feature.payment.PaymentListActivity"
             android:exported="false" />
 
         <activity

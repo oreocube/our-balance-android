@@ -1,7 +1,10 @@
 package com.ourbalance.data.entity.mapper
 
+import com.ourbalance.data.entity.payment.PaymentEntity
 import com.ourbalance.data.entity.payment.PaymentInfoEntity
+import com.ourbalance.data.ext.toDateString
 import com.ourbalance.domain.model.PaymentInfo
+import com.ourbalance.domain.model.PaymentItemModel
 
 fun PaymentInfo.toEntity(): PaymentInfoEntity {
     return PaymentInfoEntity(
@@ -10,5 +13,16 @@ fun PaymentInfo.toEntity(): PaymentInfoEntity {
         amount = amount,
         content = content,
         date = date
+    )
+}
+
+fun PaymentEntity.toModel(): PaymentItemModel.Payment {
+    return PaymentItemModel.Payment(
+        paymentId = paymentId,
+        participantId = participantId,
+        content = content,
+        date = date.toDateString(),
+        amount = amount,
+        username = username
     )
 }

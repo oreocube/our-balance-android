@@ -8,6 +8,7 @@ plugins {
 dependencies {
     implementation(project(":domain"))
 
+    implementation(Libs.Paging.PAGING)
     implementation(Libs.Hilt.ANDROID)
     kapt(Libs.Hilt.COMPILER)
     implementation(Libs.Network.RETROFIT)

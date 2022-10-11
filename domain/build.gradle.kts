@@ -5,12 +5,13 @@ plugins {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_7
-    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 dependencies {
     implementation(Libs.Hilt.CORE)
     kapt(Libs.Hilt.COMPILER)
     implementation(Libs.Coroutines.CORE)
+    implementation(Libs.Paging.COMMON)
 }

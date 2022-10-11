@@ -14,6 +14,8 @@ import com.ourbalance.feature.addpayment.AddPaymentActivity
 import com.ourbalance.feature.constant.BALANCE_DETAIL
 import com.ourbalance.feature.databinding.FragmentBalanceDetailBinding
 import com.ourbalance.feature.ext.showToast
+import com.ourbalance.feature.payment.PaymentListActivity
+import com.ourbalance.feature.payment.PaymentSummary
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -47,7 +49,19 @@ class BalanceDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
+        initViews()
         observeData()
+    }
+
+    private fun initViews() {
+        if (balanceDetail.isFull) {
+            binding.viewMe.setOnClickListener {
+                navigateToPaymentList(true)
+            }
+            binding.viewOther.setOnClickListener {
+                navigateToPaymentList(false)
+            }
+        }
     }
 
     private fun observeData() {
@@ -79,6 +93,29 @@ class BalanceDetailFragment : Fragment() {
                 balanceDetail = balanceDetail
             )
         )
+    }
+
+    private fun navigateToPaymentList(byMe: Boolean) {
+        startActivity(
+            PaymentListActivity.newIntent(
+                requireContext(),
+                getSummary(byMe, balanceDetail)
+            )
+        )
+    }
+
+    private fun getSummary(byMe: Boolean, balanceDetail: BalanceDetail): PaymentSummary {
+        return balanceDetail.run {
+            val payer = if (byMe) me else others[0]
+
+            PaymentSummary(
+                isMe = byMe,
+                username = payer.userName,
+                total = total,
+                amount = payer.amount,
+                ratio = payer.ratio
+            )
+        }
     }
 
     override fun onDestroyView() {

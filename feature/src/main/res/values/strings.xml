@@ -53,4 +53,6 @@
     <string name="currency_format">%,d원</string>
     <string name="message_invitation_code">🎉 함께할 상대를 초대하세요 🎉</string>
     <string name="message_empty_payment">\n+ 버튼을 눌러 정산항목을 추가해보세요\n</string>
+    <string name="payment_summary_payer_label">의 지불금액</string>
+    <string name="title_payment_list">%s의 지불내역</string>
 </resources>

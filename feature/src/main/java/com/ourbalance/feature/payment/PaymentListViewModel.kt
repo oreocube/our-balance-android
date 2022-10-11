@@ -16,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PaymentListViewModel @Inject constructor(
-    private val paymentRepository: PaymentRepository
+    paymentRepository: PaymentRepository
 ) : ViewModel() {
 
     private val _message = MutableSharedFlow<String>()
@@ -24,10 +24,7 @@ class PaymentListViewModel @Inject constructor(
 
     val pagingData: Flow<PagingData<PaymentItemModel>> =
         paymentRepository.getAllPaymentsForParticipant(
-            balanceId = 100,
-            participantId = 1
-        )
-            .catch { Timber.d(it.message) }
-            .cachedIn(viewModelScope)
+            balanceId = 100, participantId = 1
+        ).catch { Timber.d(it.message) }.cachedIn(viewModelScope)
 
 }

@@ -92,9 +92,12 @@ class BalanceBar constructor(
         super.onDraw(canvas)
 
         with(canvas) {
-            drawPath(ratioPath, paint.apply {
-                color = fillColor
-            })
+            drawPath(
+                ratioPath,
+                paint.apply {
+                    color = fillColor
+                }
+            )
             drawPath(ratioPath, strokePaint)
             drawPath(borderPath, strokePaint)
         }

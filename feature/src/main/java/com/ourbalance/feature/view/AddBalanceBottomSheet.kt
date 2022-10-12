@@ -11,8 +11,8 @@ import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.ADD_BALANCE
 import com.ourbalance.feature.constant.ADD_BALANCE_CODE
 import com.ourbalance.feature.databinding.BottomSheetAddBalanceBinding
-import com.ourbalance.feature.home.addbalance.AddBalanceCodeFragment
-import com.ourbalance.feature.home.addbalance.AddBalanceFragment
+import com.ourbalance.feature.screen.home.addbalance.AddBalanceCodeFragment
+import com.ourbalance.feature.screen.home.addbalance.AddBalanceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".payment.PaymentListActivity">
+        tools:context=".screen.payment.PaymentListActivity">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_close"

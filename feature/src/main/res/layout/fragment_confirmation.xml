@@ -7,13 +7,13 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.addpayment.AddPaymentViewModel" />
+            type="com.ourbalance.feature.screen.addpayment.AddPaymentViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".addpayment.ConfirmationFragment">
+        tools:context=".screen.addpayment.ConfirmationFragment">
 
         <TextView
             android:id="@+id/tv_payer"

@@ -4,9 +4,9 @@ import com.ourbalance.data.entity.balance.BalanceDetailEntity
 import com.ourbalance.data.entity.balance.BalanceInfoEntity
 import com.ourbalance.data.entity.balance.ParticipantEntity
 import com.ourbalance.data.ext.getRatio
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.BalanceInfo
-import com.ourbalance.domain.model.Participant
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceInfo
+import com.ourbalance.domain.model.room.Participant
 
 fun BalanceInfoEntity.toModel(): BalanceInfo {
     return BalanceInfo(

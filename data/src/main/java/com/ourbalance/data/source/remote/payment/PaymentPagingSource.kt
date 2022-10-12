@@ -2,7 +2,7 @@ package com.ourbalance.data.source.remote.payment
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.ourbalance.domain.model.PaymentItemModel
+import com.ourbalance.domain.model.payment.PaymentItemModel
 import javax.inject.Inject
 
 class PaymentPagingSource @Inject constructor(

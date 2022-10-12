@@ -4,7 +4,7 @@ import com.ourbalance.data.api.AuthService
 import com.ourbalance.data.entity.mapper.toEntity
 import com.ourbalance.data.ext.getResponse
 import com.ourbalance.data.source.local.PreferenceStorage
-import com.ourbalance.domain.model.UserInfo
+import com.ourbalance.domain.model.auth.UserInfo
 import com.ourbalance.domain.result.Result
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject

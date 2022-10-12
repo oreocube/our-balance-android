@@ -1,7 +1,7 @@
 package com.ourbalance.domain.usecase
 
 import com.ourbalance.domain.di.IoDispatcher
-import com.ourbalance.domain.model.UserInfo
+import com.ourbalance.domain.model.auth.UserInfo
 import com.ourbalance.domain.repository.AuthRepository
 import com.ourbalance.domain.result.Result
 import kotlinx.coroutines.CoroutineDispatcher

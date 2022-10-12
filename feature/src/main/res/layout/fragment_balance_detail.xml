@@ -10,13 +10,13 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.home.balance.BalanceDetailViewModel" />
+            type="com.ourbalance.feature.screen.home.detail.BalanceDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.balance.BalanceDetailFragment">
+        tools:context=".screen.home.balance.BalanceDetailFragment">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"

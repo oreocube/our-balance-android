@@ -7,14 +7,14 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.information.greeting.login.LoginViewModel" />
+            type="com.ourbalance.feature.screen.information.greeting.login.LoginViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".information.greeting.login.LoginFragment">
+        tools:context=".screen.information.greeting.login.LoginFragment">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start"

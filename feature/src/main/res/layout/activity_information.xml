@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".information.InformationActivity">
+        tools:context=".screen.information.InformationActivity">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/ibt_back"

@@ -7,13 +7,13 @@
 
         <variable
             name="vm"
-            type="com.ourbalance.feature.home.addbalance.AddBalanceViewModel" />
+            type="com.ourbalance.feature.screen.home.addbalance.AddBalanceViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".home.addbalance.AddBalanceFragment">
+        tools:context="screen.home.addbalance.AddBalanceFragment">
 
         <TextView
             android:id="@+id/tv_title"

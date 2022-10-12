@@ -7,7 +7,7 @@
 
         <variable
             name="summary"
-            type="com.ourbalance.feature.payment.PaymentSummary" />
+            type="com.ourbalance.feature.screen.payment.PaymentSummary" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

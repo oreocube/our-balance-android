@@ -22,6 +22,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class AddPaymentViewModel @AssistedInject constructor(
     @Assisted(BALANCE_DETAIL) private val balanceDetail: BalanceDetail,
@@ -67,7 +70,16 @@ class AddPaymentViewModel @AssistedInject constructor(
         scope = viewModelScope
     )
 
-    val date = MutableStateFlow("2022.10.08")
+    private val dateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
+    private val _dateLong = MutableStateFlow(System.currentTimeMillis())
+    val date = _dateLong.map {
+        dateFormat.format(Date(it))
+    }.stateIn(
+        initialValue = "",
+        started = SharingStarted.WhileSubscribed(500),
+        scope = viewModelScope
+    )
+
     val myTurn = MutableStateFlow(false)
     val otherTurn = MutableStateFlow(false)
 
@@ -98,6 +110,10 @@ class AddPaymentViewModel @AssistedInject constructor(
     fun setMyTurn(check: Boolean) {
         myTurn.update { check }
         otherTurn.update { check.not() }
+    }
+
+    fun setDate(date: Long) {
+        _dateLong.update { date }
     }
 
     fun next() {

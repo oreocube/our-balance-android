@@ -110,6 +110,8 @@ class BalanceDetailFragment : Fragment() {
 
             PaymentSummary(
                 isMe = byMe,
+                balanceId = roomId,
+                payerId = payer.participantId,
                 username = payer.userName,
                 total = total,
                 amount = payer.amount,

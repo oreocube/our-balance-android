@@ -15,17 +15,28 @@ import com.ourbalance.feature.screen.payment.adapter.PaymentSummaryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class PaymentListActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var factory: PaymentListViewModelFactory
     private var _binding: ActivityPaymentListBinding? = null
     private val binding get() = requireNotNull(_binding)
-    private val viewModel by viewModels<PaymentListViewModel>()
 
     private val paymentSummary by lazy {
         intent.getSerializableExtra(SUMMARY) as PaymentSummary
     }
+
+    private val viewModel: PaymentListViewModel by viewModels {
+        PaymentListViewModel.provideFactory(
+            factory,
+            paymentSummary.balanceId,
+            paymentSummary.payerId
+        )
+    }
+
     private val paymentSummaryAdapter by lazy {
         PaymentSummaryAdapter().apply { setData(paymentSummary) }
     }

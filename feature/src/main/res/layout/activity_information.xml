@@ -12,14 +12,13 @@
         android:layout_height="match_parent"
         tools:context=".information.InformationActivity">
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ibt_back"
+            style="@style/OutlinedButton.Icon"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_prev"
+            app:icon="@drawable/ic_prev_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -25,14 +25,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ibt_close"
+            style="@style/OutlinedButton.Icon"
             android:layout_width="@dimen/button_size"
             android:layout_height="@dimen/button_size"
             android:layout_margin="@dimen/space_default"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_close"
+            android:onClick="@{()->vm.close()}"
+            app:icon="@drawable/ic_clear_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

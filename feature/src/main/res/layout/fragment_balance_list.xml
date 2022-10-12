@@ -47,12 +47,12 @@
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toTopOf="@id/gl_top" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/ibt_setting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:src="@drawable/ic_setting"
+            style="@style/OutlinedButton.Icon"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            app:icon="@drawable/ic_list_24"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintTop_toTopOf="@id/gl_top" />
 
@@ -91,13 +91,13 @@
             app:layout_constraintTop_toBottomOf="@id/tv_app_name"
             tools:listitem="@layout/item_balance" />
 
-        <ImageButton
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/fab_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/RoundedButton"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
             android:layout_marginBottom="@dimen/space_default"
-            android:background="@null"
-            android:src="@drawable/ic_add"
+            app:icon="@drawable/ic_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

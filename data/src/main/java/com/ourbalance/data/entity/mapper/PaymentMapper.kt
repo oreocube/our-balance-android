@@ -12,7 +12,7 @@ fun PaymentInfo.toEntity(): PaymentInfoEntity {
         payerId = payerId,
         amount = amount,
         content = content,
-        date = date
+        date = date.replace(".", "")
     )
 }
 

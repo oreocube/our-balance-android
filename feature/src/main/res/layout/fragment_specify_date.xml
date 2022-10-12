@@ -102,7 +102,7 @@
             android:layout_marginVertical="@dimen/space_default"
             android:background="@null"
             android:gravity="center"
-            android:text="@={vm.date}"
+            android:text="@{vm.date}"
             android:textColor="@{vm.myTurn?@color/yellow:@color/purple}"
             android:textSize="@dimen/text_size_heading"
             android:textStyle="bold"

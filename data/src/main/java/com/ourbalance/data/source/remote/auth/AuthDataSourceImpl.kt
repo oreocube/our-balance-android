@@ -6,7 +6,9 @@ import com.ourbalance.data.ext.getResponse
 import com.ourbalance.data.source.local.PreferenceStorage
 import com.ourbalance.domain.model.auth.UserInfo
 import com.ourbalance.domain.result.Result
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class AuthDataSourceImpl @Inject constructor(
@@ -32,4 +34,15 @@ class AuthDataSourceImpl @Inject constructor(
     }
 
     override suspend fun getToken() = prefs.userToken.first()
+
+    override suspend fun isLogin(): Flow<Boolean> {
+        return prefs.userToken.map {
+            it.isNotEmpty()
+        }
+    }
+
+    override suspend fun logout() {
+        prefs.updateUsername("")
+        prefs.updateToken("")
+    }
 }

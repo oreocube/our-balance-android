@@ -3,6 +3,8 @@ package com.ourbalance.di
 import com.ourbalance.BuildConfig
 import com.ourbalance.data.api.AuthService
 import com.ourbalance.data.api.BalanceService
+import com.ourbalance.data.api.PaymentService
+import com.ourbalance.data.api.UserService
 import com.ourbalance.data.api.ResponseUnboxingInterceptor
 import com.ourbalance.data.api.TokenInterceptor
 import dagger.Module
@@ -22,6 +24,10 @@ annotation class AuthOkHttpClient
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
+annotation class UserOkHttpClient
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
 annotation class DefaultOkHttpClient
 
 @Module
@@ -31,6 +37,15 @@ object RemoteModule {
     @Provides
     @Singleton
     fun providesAuthOkHttpClient() = OkHttpClient.Builder().build()
+
+    @UserOkHttpClient
+    @Provides
+    @Singleton
+    fun providesUserOkHttpClient(
+        tokenInterceptor: TokenInterceptor
+    ): OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(tokenInterceptor)
+        .build()
 
     @DefaultOkHttpClient
     @Provides
@@ -56,6 +71,17 @@ object RemoteModule {
 
     @Provides
     @Singleton
+    fun providesUserApi(
+        @UserOkHttpClient client: OkHttpClient
+    ): UserService = Retrofit.Builder()
+        .baseUrl(BuildConfig.BASE_URL)
+        .client(client)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create()
+
+    @Provides
+    @Singleton
     fun providesRetrofit(
         @DefaultOkHttpClient client: OkHttpClient
     ): Retrofit = Retrofit.Builder()
@@ -67,4 +93,8 @@ object RemoteModule {
     @Provides
     @Singleton
     fun providesBalanceService(retrofit: Retrofit): BalanceService = retrofit.create()
+
+    @Provides
+    @Singleton
+    fun providesPaymentService(retrofit: Retrofit): PaymentService = retrofit.create()
 }

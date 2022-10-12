@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
@@ -63,6 +64,11 @@ class LoginFragment : Fragment() {
                         } else {
                             getString(R.string.error_email_format)
                         }
+                    }
+                }
+                launch {
+                    viewModel.successEvent.collect {
+                        parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                     }
                 }
             }

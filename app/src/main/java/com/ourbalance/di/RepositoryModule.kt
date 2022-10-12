@@ -3,9 +3,11 @@ package com.ourbalance.di
 import com.ourbalance.data.repository.AuthRepositoryImpl
 import com.ourbalance.data.repository.BalanceRepositoryImpl
 import com.ourbalance.data.repository.PaymentRepositoryImpl
+import com.ourbalance.data.repository.UserRepositoryImpl
 import com.ourbalance.domain.repository.AuthRepository
 import com.ourbalance.domain.repository.BalanceRepository
 import com.ourbalance.domain.repository.PaymentRepository
+import com.ourbalance.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,6 +20,10 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun bindsAuthRepository(authRepository: AuthRepositoryImpl): AuthRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindsUserRepository(userRepositoryImpl: UserRepositoryImpl): UserRepository
 
     @Singleton
     @Binds

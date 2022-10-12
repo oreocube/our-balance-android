@@ -17,7 +17,7 @@ class AuthRepositoryImpl @Inject constructor(
         return authDataSource.signup(userInfo)
     }
 
-    override suspend fun checkLogin(): Boolean {
-        return authDataSource.getToken().isNotEmpty()
+    override suspend fun logout() {
+        authDataSource.logout()
     }
 }

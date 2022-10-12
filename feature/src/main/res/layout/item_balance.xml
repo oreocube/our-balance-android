@@ -9,7 +9,7 @@
 
         <variable
             name="item"
-            type="com.ourbalance.domain.model.BalanceDetail" />
+            type="com.ourbalance.domain.model.balance.BalanceDetail" />
 
     </data>
 

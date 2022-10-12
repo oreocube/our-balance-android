@@ -3,8 +3,8 @@ package com.ourbalance.data.entity.mapper
 import com.ourbalance.data.entity.payment.PaymentEntity
 import com.ourbalance.data.entity.payment.PaymentInfoEntity
 import com.ourbalance.data.ext.toDateString
-import com.ourbalance.domain.model.PaymentInfo
-import com.ourbalance.domain.model.PaymentItemModel
+import com.ourbalance.domain.model.payment.PaymentInfo
+import com.ourbalance.domain.model.payment.PaymentItemModel
 
 fun PaymentInfo.toEntity(): PaymentInfoEntity {
     return PaymentInfoEntity(

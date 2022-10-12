@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetail
 import com.ourbalance.feature.addpayment.AddPaymentActivity
 import com.ourbalance.feature.constant.BALANCE_DETAIL
 import com.ourbalance.feature.databinding.FragmentBalanceDetailBinding

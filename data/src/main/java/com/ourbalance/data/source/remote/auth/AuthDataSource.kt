@@ -1,6 +1,6 @@
 package com.ourbalance.data.source.remote.auth
 
-import com.ourbalance.domain.model.UserInfo
+import com.ourbalance.domain.model.auth.UserInfo
 import com.ourbalance.domain.result.Result
 
 interface AuthDataSource {

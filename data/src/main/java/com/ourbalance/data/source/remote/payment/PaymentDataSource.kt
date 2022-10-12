@@ -1,7 +1,7 @@
 package com.ourbalance.data.source.remote.payment
 
-import com.ourbalance.domain.model.PaymentInfo
-import com.ourbalance.domain.model.PaymentItemModel
+import com.ourbalance.domain.model.payment.PaymentInfo
+import com.ourbalance.domain.model.payment.PaymentItemModel
 
 interface PaymentDataSource {
     suspend fun addPayment(paymentInfo: PaymentInfo): Long

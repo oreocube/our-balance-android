@@ -12,7 +12,7 @@ import androidx.fragment.app.replace
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetail
 import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.ADD_BALANCE_BOTTOM_SHEET
 import com.ourbalance.feature.constant.BALANCE_DETAIL

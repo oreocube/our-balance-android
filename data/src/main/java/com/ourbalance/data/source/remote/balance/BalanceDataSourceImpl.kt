@@ -3,11 +3,11 @@ package com.ourbalance.data.source.remote.balance
 import com.ourbalance.data.api.BalanceService
 import com.ourbalance.data.entity.mapper.toEntity
 import com.ourbalance.data.entity.mapper.toModel
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.BalanceDetailInfo
-import com.ourbalance.domain.model.BalanceInfo
-import com.ourbalance.domain.model.ParticipationInfo
-import com.ourbalance.domain.model.RoomInfo
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetailInfo
+import com.ourbalance.domain.model.balance.BalanceInfo
+import com.ourbalance.domain.model.room.ParticipationInfo
+import com.ourbalance.domain.model.room.RoomInfo
 import javax.inject.Inject
 
 class BalanceDataSourceImpl @Inject constructor(

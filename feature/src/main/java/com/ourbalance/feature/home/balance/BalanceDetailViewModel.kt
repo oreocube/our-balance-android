@@ -3,8 +3,8 @@ package com.ourbalance.feature.home.balance
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.BalanceDetailInfo
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetailInfo
 import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.usecase.GetBalanceDetailUseCase
 import com.ourbalance.feature.home.balance.BalanceDetailViewModel.Companion.BALANCE_ID

@@ -2,7 +2,7 @@ package com.ourbalance.feature.home.addbalance
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ourbalance.domain.model.RoomInfo
+import com.ourbalance.domain.model.room.RoomInfo
 import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.usecase.AddBalanceUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

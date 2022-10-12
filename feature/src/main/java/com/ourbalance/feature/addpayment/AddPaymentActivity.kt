@@ -10,7 +10,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetail
 import com.ourbalance.feature.R
 import com.ourbalance.feature.constant.STEP_CHOOSE_PAYER
 import com.ourbalance.feature.constant.STEP_CONFIRMATION

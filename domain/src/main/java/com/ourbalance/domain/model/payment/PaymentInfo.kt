@@ -1,4 +1,4 @@
-package com.ourbalance.domain.model
+package com.ourbalance.domain.model.payment
 
 data class PaymentInfo(
     val balanceId: Long,

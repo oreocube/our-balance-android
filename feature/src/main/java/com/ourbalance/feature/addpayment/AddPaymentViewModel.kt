@@ -3,8 +3,8 @@ package com.ourbalance.feature.addpayment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.PaymentInfo
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.payment.PaymentInfo
 import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.usecase.AddPaymentUseCase
 import com.ourbalance.feature.constant.BALANCE_DETAIL

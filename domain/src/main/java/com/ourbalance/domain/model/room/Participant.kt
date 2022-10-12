@@ -1,4 +1,4 @@
-package com.ourbalance.domain.model
+package com.ourbalance.domain.model.room
 
 import java.io.Serializable
 

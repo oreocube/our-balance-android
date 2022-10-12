@@ -1,10 +1,10 @@
 package com.ourbalance.domain.repository
 
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.BalanceDetailInfo
-import com.ourbalance.domain.model.BalanceInfo
-import com.ourbalance.domain.model.ParticipationInfo
-import com.ourbalance.domain.model.RoomInfo
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetailInfo
+import com.ourbalance.domain.model.balance.BalanceInfo
+import com.ourbalance.domain.model.room.ParticipationInfo
+import com.ourbalance.domain.model.room.RoomInfo
 
 interface BalanceRepository {
     suspend fun getBalanceList(): List<BalanceInfo>

@@ -1,6 +1,6 @@
 package com.ourbalance.domain.repository
 
-import com.ourbalance.domain.model.UserInfo
+import com.ourbalance.domain.model.auth.UserInfo
 import com.ourbalance.domain.result.Result
 
 interface AuthRepository {

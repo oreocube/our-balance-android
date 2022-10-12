@@ -2,8 +2,8 @@ package com.ourbalance.data.entity.mapper
 
 import com.ourbalance.data.entity.room.ParticipationInfoEntity
 import com.ourbalance.data.entity.room.RoomInfoEntity
-import com.ourbalance.domain.model.ParticipationInfo
-import com.ourbalance.domain.model.RoomInfo
+import com.ourbalance.domain.model.room.ParticipationInfo
+import com.ourbalance.domain.model.room.RoomInfo
 
 fun RoomInfo.toEntity(): RoomInfoEntity {
     return RoomInfoEntity(

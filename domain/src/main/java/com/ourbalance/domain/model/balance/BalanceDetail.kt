@@ -1,5 +1,6 @@
-package com.ourbalance.domain.model
+package com.ourbalance.domain.model.balance
 
+import com.ourbalance.domain.model.room.Participant
 import java.io.Serializable
 
 data class BalanceDetail(

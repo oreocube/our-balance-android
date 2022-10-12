@@ -2,7 +2,7 @@ package com.ourbalance.feature.home.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ourbalance.domain.model.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetail
 import com.ourbalance.domain.result.Result
 import com.ourbalance.domain.usecase.CheckLoginUseCase
 import com.ourbalance.domain.usecase.GetBalanceListUseCase

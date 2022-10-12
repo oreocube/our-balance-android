@@ -1,8 +1,8 @@
 package com.ourbalance.domain.usecase
 
 import com.ourbalance.domain.di.IoDispatcher
-import com.ourbalance.domain.model.BalanceDetail
-import com.ourbalance.domain.model.BalanceDetailInfo
+import com.ourbalance.domain.model.balance.BalanceDetail
+import com.ourbalance.domain.model.balance.BalanceDetailInfo
 import com.ourbalance.domain.repository.BalanceRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject

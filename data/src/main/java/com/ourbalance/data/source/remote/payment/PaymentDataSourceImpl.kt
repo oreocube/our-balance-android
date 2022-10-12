@@ -3,8 +3,8 @@ package com.ourbalance.data.source.remote.payment
 import com.ourbalance.data.api.PaymentService
 import com.ourbalance.data.entity.mapper.toEntity
 import com.ourbalance.data.entity.mapper.toModel
-import com.ourbalance.domain.model.PaymentInfo
-import com.ourbalance.domain.model.PaymentItemModel
+import com.ourbalance.domain.model.payment.PaymentInfo
+import com.ourbalance.domain.model.payment.PaymentItemModel
 import javax.inject.Inject
 
 class PaymentDataSourceImpl @Inject constructor(

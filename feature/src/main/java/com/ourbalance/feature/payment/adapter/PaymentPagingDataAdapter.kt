@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.ourbalance.domain.model.PaymentItemModel
+import com.ourbalance.domain.model.payment.PaymentItemModel
 import com.ourbalance.feature.R
 import com.ourbalance.feature.databinding.ItemPaymentBinding
 import com.ourbalance.feature.databinding.ItemPaymentHeaderBinding

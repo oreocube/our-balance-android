@@ -1,7 +1,7 @@
 package com.ourbalance.domain.usecase
 
 import com.ourbalance.domain.di.IoDispatcher
-import com.ourbalance.domain.model.ParticipationInfo
+import com.ourbalance.domain.model.room.ParticipationInfo
 import com.ourbalance.domain.repository.BalanceRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import javax.inject.Inject

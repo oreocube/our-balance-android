@@ -1,4 +1,4 @@
-package com.ourbalance.domain.model
+package com.ourbalance.domain.model.payment
 
 sealed class PaymentItemModel(open val date: String) {
     data class Payment(

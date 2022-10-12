@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -75,6 +76,11 @@ class SignupFragment : Fragment() {
                                 getString(R.string.error_password_check)
                             }
                         }
+                    }
+                }
+                launch {
+                    viewModel.successEvent.collect {
+                        parentFragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
                     }
                 }
             }

@@ -6,6 +6,8 @@ import com.ourbalance.data.source.remote.balance.BalanceDataSource
 import com.ourbalance.data.source.remote.balance.BalanceDataSourceImpl
 import com.ourbalance.data.source.remote.payment.PaymentDataSource
 import com.ourbalance.data.source.remote.payment.PaymentDataSourceImpl
+import com.ourbalance.data.source.remote.user.UserDataSource
+import com.ourbalance.data.source.remote.user.UserDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -18,6 +20,10 @@ abstract class DataSourceModule {
     @Singleton
     @Binds
     abstract fun bindsAuthDataSource(authDataSourceImpl: AuthDataSourceImpl): AuthDataSource
+
+    @Singleton
+    @Binds
+    abstract fun bindsUserDataSource(userDataSourceImpl: UserDataSourceImpl): UserDataSource
 
     @Singleton
     @Binds

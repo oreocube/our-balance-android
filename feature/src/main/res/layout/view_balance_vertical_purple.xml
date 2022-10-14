@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="username"
+            type="String" />
+
+        <variable
+            name="ratio"
+            type="Integer" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/radius_large"
+        app:strokeColor="@color/purple"
+        app:strokeWidth="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/space_default"
+                android:fontFamily="@font/imcre_soojin_regular"
+                android:gravity="center"
+                android:text="@{username}"
+                android:textAppearance="@style/PlainText.Bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="안녕" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lv_balance"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/space_default"
+                android:scaleType="centerCrop"
+                android:visibility="@{ratio==0?View.INVISIBLE:View.VISIBLE}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_percent="@{ratio}"
+                app:layout_constraintTop_toBottomOf="@id/tv_username"
+                app:layout_constraintVertical_bias="1"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/wave_purple" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

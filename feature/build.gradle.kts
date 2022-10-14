@@ -31,4 +31,5 @@ dependencies {
     implementation(Libs.Network.LOGGING_INTERCEPTOR)
     implementation(Libs.Timber.TIMBER)
     implementation(Libs.Coroutines.CORE)
+    implementation(Libs.Animation.LOTTIE)
 }

@@ -54,4 +54,8 @@ object Libs {
         const val PAGING = "androidx.paging:paging-runtime:${Version.PAGING}"
         const val COMMON = "androidx.paging:paging-common:${Version.PAGING}"
     }
+
+    object Animation {
+        const val LOTTIE = "com.airbnb.android:lottie:${Version.LOTTIE}"
+    }
 }

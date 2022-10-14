@@ -135,34 +135,36 @@
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="view_compare, view_invitation_code, tv_list_empty" />
 
-        <View
+        <include
             android:id="@+id/view_me"
+            layout="@layout/view_balance_vertical_yellow"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/space_default"
             android:layout_marginEnd="@dimen/space_text"
             android:layout_marginBottom="@dimen/space_default"
-            android:background="@drawable/bg_message"
-            android:backgroundTint="@color/yellow"
             app:layout_constraintBottom_toTopOf="@id/ibt_add"
             app:layout_constraintEnd_toStartOf="@id/view_other"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/br_middle" />
+            app:layout_constraintTop_toBottomOf="@id/br_middle"
+            bind:ratio="@{vm.balanceDetailItem.me.ratio}"
+            bind:username="@{vm.user}" />
 
-        <View
+        <include
             android:id="@+id/view_other"
+            layout="@layout/view_balance_vertical_purple"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/space_text"
             android:layout_marginTop="@dimen/space_default"
             android:layout_marginBottom="@dimen/space_default"
-            android:background="@drawable/bg_message"
-            android:backgroundTint="@color/purple"
             app:layout_constraintBottom_toTopOf="@id/ibt_add"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toEndOf="@id/view_me"
-            app:layout_constraintTop_toBottomOf="@id/br_middle" />
+            app:layout_constraintTop_toBottomOf="@id/br_middle"
+            bind:ratio="@{vm.balanceDetailItem.full?vm.balanceDetailItem.others[0].ratio:0}"
+            bind:username="@{vm.otherName}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

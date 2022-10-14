@@ -55,10 +55,10 @@ class BalanceDetailFragment : Fragment() {
 
     private fun initViews() {
         if (balanceDetail.isFull) {
-            binding.viewMe.setOnClickListener {
+            binding.viewMe.root.setOnClickListener {
                 navigateToPaymentList(true)
             }
-            binding.viewOther.setOnClickListener {
+            binding.viewOther.root.setOnClickListener {
                 navigateToPaymentList(false)
             }
         }

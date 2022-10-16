@@ -55,4 +55,12 @@
     <string name="message_empty_payment">\n+ 버튼을 눌러 정산항목을 추가해보세요\n</string>
     <string name="payment_summary_payer_label">의 지불금액</string>
     <string name="title_payment_list">%s의 지불내역</string>
+
+    <!-- profile -->
+    <string name="title_profile">%s 님\n안녕하세요</string>
+    <string name="title_update_nickname">닉네임 수정</string>
+    <string name="title_question_and_answer">문의하기 / Q &amp; A</string>
+    <string name="title_makers">만든사람들</string>
+    <string name="title_logout">로그아웃</string>
+    <string name="title_withdraw">회원탈퇴</string>
 </resources>

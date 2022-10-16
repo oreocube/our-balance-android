@@ -64,6 +64,7 @@ class BalanceListViewModel @Inject constructor(
                         userInfo.update { result.data }
                     }
                     is Result.Error -> {
+                        userInfo.update { "" }
                         Timber.d(result.message)
                     }
                 }

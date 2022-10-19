@@ -35,7 +35,7 @@ class AuthDataSourceImpl @Inject constructor(
 
     override suspend fun getToken() = prefs.userToken.first()
 
-    override suspend fun isLogin(): Flow<Boolean> {
+    override fun isLogin(): Flow<Boolean> {
         return prefs.userToken.map {
             it.isNotEmpty()
         }

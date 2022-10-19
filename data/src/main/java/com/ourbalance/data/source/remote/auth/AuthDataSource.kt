@@ -9,6 +9,6 @@ interface AuthDataSource {
     suspend fun signup(userInfo: UserInfo): Result<Unit>
     suspend fun saveToken(token: String)
     suspend fun getToken(): String
-    suspend fun isLogin(): Flow<Boolean>
+    fun isLogin(): Flow<Boolean>
     suspend fun logout()
 }

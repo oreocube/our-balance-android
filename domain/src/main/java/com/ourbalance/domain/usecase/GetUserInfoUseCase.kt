@@ -13,7 +13,7 @@ class GetUserInfoUseCase @Inject constructor(
     private val userRepository: UserRepository,
     @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) {
-    suspend operator fun invoke(): Flow<Result<String>> {
+    operator fun invoke(): Flow<Result<String>> {
         return userRepository.getUserInfo()
             .catch { e -> Result.Error(e.message ?: "Unknown Error") }
             .flowOn(dispatcher)

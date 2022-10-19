@@ -12,7 +12,7 @@ class UserRepositoryImpl @Inject constructor(
     private val authDataSource: AuthDataSource,
     private val userDataSource: UserDataSource
 ) : UserRepository {
-    override suspend fun getUserInfo(): Flow<Result<String>> {
+    override fun getUserInfo(): Flow<Result<String>> {
         return authDataSource.isLogin().map { isLogin ->
             if (isLogin) {
                 userDataSource.getUserInfo()

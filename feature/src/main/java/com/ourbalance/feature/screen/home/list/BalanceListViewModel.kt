@@ -12,16 +12,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class BalanceListViewModel @Inject constructor(
-    private val getUserInfoUseCase: GetUserInfoUseCase,
+    getUserInfoUseCase: GetUserInfoUseCase,
     private val getBalanceListUseCase: GetBalanceListUseCase
 ) : ViewModel() {
     private val _message = MutableSharedFlow<String>()
@@ -53,23 +53,17 @@ class BalanceListViewModel @Inject constructor(
     )
 
     init {
-        getUserInfo()
-    }
-
-    private fun getUserInfo() {
-        viewModelScope.launch {
-            getUserInfoUseCase().collect { result ->
-                when (result) {
-                    is Result.Success -> {
-                        userInfo.update { result.data }
-                    }
-                    is Result.Error -> {
-                        userInfo.update { "" }
-                        Timber.d(result.message)
-                    }
+        getUserInfoUseCase().map { result ->
+            when (result) {
+                is Result.Success -> {
+                    userInfo.update { result.data }
+                }
+                is Result.Error -> {
+                    userInfo.update { "" }
+                    Timber.d(result.message)
                 }
             }
-        }
+        }.launchIn(viewModelScope)
     }
 
     private suspend fun fetchData(userInfo: String): List<BalanceDetail> {

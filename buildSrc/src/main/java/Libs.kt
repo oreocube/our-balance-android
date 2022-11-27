@@ -58,4 +58,10 @@ object Libs {
     object Animation {
         const val LOTTIE = "com.airbnb.android:lottie:${Version.LOTTIE}"
     }
+
+    object Firebase {
+        const val GMS_GOOGLE_SERVICES = "com.google.gms:google-services:4.3.13"
+        const val FIREBASE_BOM = "com.google.firebase:firebase-bom:31.1.0"
+        const val AUTH = "com.google.firebase:firebase-auth-ktx"
+    }
 }

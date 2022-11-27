@@ -5,6 +5,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 val properties = Properties()
@@ -43,4 +44,6 @@ dependencies {
     implementation(Libs.Timber.TIMBER)
     implementation(Libs.Coroutines.CORE)
     implementation(Libs.DataStore.DATASTORE)
+    implementation(platform(Libs.Firebase.FIREBASE_BOM))
+    implementation(Libs.Firebase.AUTH)
 }

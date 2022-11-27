@@ -7,6 +7,7 @@ plugins {
 buildscript {
     dependencies {
         classpath(Libs.Hilt.ANDROID_GRADLE_PLUGIN)
+        classpath(Libs.Firebase.GMS_GOOGLE_SERVICES)
     }
 }
 

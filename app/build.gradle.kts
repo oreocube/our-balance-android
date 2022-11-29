@@ -25,6 +25,8 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":feature"))
 
+    implementation(platform(Libs.Firebase.FIREBASE_BOM))
+    implementation(Libs.Firebase.AUTH)
     implementation(Libs.AndroidX.CORE)
     implementation(Libs.AndroidX.APPCOMPAT)
     implementation(Libs.AndroidX.MATERIAL)
@@ -44,6 +46,4 @@ dependencies {
     implementation(Libs.Timber.TIMBER)
     implementation(Libs.Coroutines.CORE)
     implementation(Libs.DataStore.DATASTORE)
-    implementation(platform(Libs.Firebase.FIREBASE_BOM))
-    implementation(Libs.Firebase.AUTH)
 }

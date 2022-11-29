@@ -10,6 +10,8 @@ dependencies {
 
     implementation(Libs.Paging.PAGING)
     implementation(Libs.Hilt.ANDROID)
+    implementation(platform(Libs.Firebase.FIREBASE_BOM))
+    implementation(Libs.Firebase.AUTH)
     kapt(Libs.Hilt.COMPILER)
     implementation(Libs.Network.RETROFIT)
     implementation(Libs.Network.CONVERTER_GSON)

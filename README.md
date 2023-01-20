@@ -9,7 +9,7 @@
     - 누가, 언제, 무엇을 위해, 얼마나 지불했는지 선택하여 내역을 등록할 수 있습니다.
     
 # UI
-<img width="800" alt="ui" src="https://user-images.githubusercontent.com/78132126/196633204-d6300e69-a949-4192-9b3e-0ebb6dd81d1c.png" />
+<img width="800" alt="ui" src="https://user-images.githubusercontent.com/78132126/213683768-3952667a-971b-4923-aeba-c79538c6a808.png" />
 
 # Tech Stack
 - **Jetpack** : DataBinding, DataStore, Lifecycles, Paging3, ViewModel
